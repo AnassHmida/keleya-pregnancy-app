@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import DatePicker from 'react-native-date-picker'; // Import DatePicker
 import ImageComponent from '../../components/Image';
@@ -12,6 +12,7 @@ import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { AppStackParamList } from '../../navigation/AppNavigator';
 import { Workout } from '../../constants/navigation';
+import { KeleyaContext } from '../../context/KeleyaContext';
 
 const DateScreen = () => {
   const [email, setEmail] = useState('');
@@ -20,6 +21,16 @@ const DateScreen = () => {
   const [subscribedToNewsletter, setSubscribedToNewsletter] = useState(false);
   const navigation = useNavigation<StackNavigationProp<AppStackParamList>>();
   const [open, setOpen] = useState(false)
+
+  const keleyaContext = useContext(KeleyaContext);
+
+  if (!keleyaContext) {
+    return null;
+  }
+  const { name  } = keleyaContext;
+
+  
+  
   const handleSucces = () => {
 navigation.navigate(Workout)
   };
@@ -30,10 +41,9 @@ navigation.navigate(Workout)
         submittitle='Continue'
         onSubmit={handleSucces}
         headerimage={images.date}
-        title="Add your details below to set up an account"
+        title={`When is your baby due, ${name}?`}
         render={() => (
           <>
-
             <Button text={date.toDateString()} onPress={() => setOpen(true)} style={LoginButtonsStyles} />
             <DatePicker
               modal

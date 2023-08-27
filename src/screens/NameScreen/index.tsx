@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import ImageComponent from '../../components/Image';
 import Button from '../../components/Button';
@@ -12,14 +12,20 @@ import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { AppStackParamList } from '../../navigation/AppNavigator';
 import { Date } from '../../constants/navigation';
+import { KeleyaContext } from '../../context/KeleyaContext';
 
 const NameScreen = () => {
-  const [email, setEmail] = useState('');
+
   const [password, setPassword] = useState('');
   const [agreedToTerms, setAgreedToTerms] = useState(false);
   const [subscribedToNewsletter, setSubscribedToNewsletter] = useState(false);
   const navigation = useNavigation<StackNavigationProp<AppStackParamList>>();
- 
+  const keleyaContext = useContext(KeleyaContext);
+
+  if (!keleyaContext) {
+    return null;
+  }
+  const { name,setUsername  } = keleyaContext;
 
   
   const handleSucces = () => {
@@ -40,8 +46,8 @@ const NameScreen = () => {
           <>
             <InputField
               placeholder="Your Name"
-              value={email}
-              onChangeText={setEmail}
+              value={name}
+              onChangeText={setUsername}
               style={InputStyle}
             />
         

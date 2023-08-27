@@ -10,6 +10,7 @@ import NameScreen from '../screens/NameScreen';
 import DateScreen from '../screens/DateScreen';
 import WorkoutScreen from '../screens/WorkoutScreen';
 import SuccessScreen from '../screens/SuccessScreen';
+import KeleyaProvider from '../context/KeleyaProvider';
 
 const Stack = createStackNavigator();
 
@@ -88,7 +89,12 @@ const AppNavigator = () => {
 };
 
 const App = () => {
-  return <AppNavigator />;
+
+  return (
+    <KeleyaProvider>
+      <AppNavigator />
+    </KeleyaProvider>
+  );
 };
 
 export default App;
