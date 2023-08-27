@@ -24,7 +24,7 @@ const MainScreen = () => {
             style={styles.logo}
             resizeMode={'center'}
           />
-          <Text style={styles.logoText}>For a Fit and Relaxed Pregnancy</Text>
+          <Text style={styles.logoText}>For a fit and relaxed pregnancy</Text>
         </View>
         <View style={styles.buttonContainer}>
           <Button
@@ -35,7 +35,7 @@ const MainScreen = () => {
             style={LoginButtonsStyles}
           />
           <Button
-            text="Or Login"
+            text="Or login"
             onPress={() =>  navigation.navigate(SignIn)}
             style={SignUpButtonStyles}
           />

@@ -11,7 +11,7 @@ import Form from '../../components/Form';
 import {useNavigation} from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { AppStackParamList } from '../../navigation/AppNavigator';
-import { Name } from '../../constants/navigation';
+import { Name, Success } from '../../constants/navigation';
 
 const SignInScreen = () => {
   const [email, setEmail] = useState('');
@@ -21,21 +21,21 @@ const SignInScreen = () => {
   return (
     <>
       <Form
-        submittitle='Login'
+        submittitle='Log in'
         onSubmit={()=>{
-          navigation.navigate(Name)
+          navigation.navigate(Success)
         }}
         headerimage={images.authentication_background}
-        title="Welcome back"
+        title="Welcome back!"
         render={() => (
           <>
             <InputField
-              placeholder="Email"
+              placeholder="example@gmail.com"
               value={email}
               onChangeText={setEmail}
             />
             <InputField
-              placeholder="Password"
+              placeholder="Enter a password"
               secureTextEntry
               value={password}
               onChangeText={setPassword}

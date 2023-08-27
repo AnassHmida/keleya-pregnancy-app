@@ -36,6 +36,23 @@ export const SignUpButtonStyles = StyleSheet.create({
   },
 });
 
+export const InputStyle = StyleSheet.create({
+  container: {
+    width: '100%',
+    marginBottom: 20,
+  },
+  input: {
+    fontFamily:'MuseoSansRounded-500',
+    borderBottomWidth: 1,
+    fontSize: 16,
+  },
+  toggleButton: {
+    position: 'absolute',
+    right: 10,
+    bottom: 12,
+  },
+});
+
 export const styles = StyleSheet.create({
   container: {
     flex: 1,

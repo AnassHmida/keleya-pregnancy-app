@@ -27,7 +27,7 @@ navigation.navigate(Workout)
   return (
     <>
       <Form
-        submittitle='Login'
+        submittitle='Continue'
         onSubmit={handleSucces}
         headerimage={images.date}
         title="Add your details below to set up an account"

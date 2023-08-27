@@ -5,16 +5,17 @@ export const checkBoxStyle = StyleSheet.create({
   checkboxstyle: {
     width: 20,
     height: 20,
-    borderWidth: 2,
-    borderColor: 'black',
+    borderWidth: 1,
+    borderRadius: 3,
     marginRight: 10,
+    borderColor: Colors.LIGHT_TEAL,
   },
   checkboxlabelstyle: {
     fontSize: 16,
   },
   checkedboxstyle: {
-    backgroundColor: Colors.BUBBLE_GUM,
-    borderColor: Colors.BUBBLE_GUM,
+    backgroundColor: Colors.LIGHT_TEAL,
+    borderColor: Colors.LIGHT_TEAL,
   },
 });
 

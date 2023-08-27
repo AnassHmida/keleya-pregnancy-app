@@ -6,7 +6,7 @@ import InputField from '../../components/InputField';
 import Colors from '../../constants/colors';
 import Checkbox from '../../components/CheckBox';
 import images from '../../constants/images';
-import {styles, checkBoxStyle, SignUpButtonStyles} from './style';
+import {styles, checkBoxStyle, SignUpButtonStyles, InputStyle} from './style';
 import Form from '../../components/Form';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
@@ -29,18 +29,20 @@ const NameScreen = () => {
   return (
     <>
       <Form
-        submittitle='Login'
+        submittitle='Continue'
         onSubmit={()=>{
           navigation.navigate(Date)
         }}
         headerimage={images.name}
-        title="Add your details below to set up an account"
+        title="It's great that you're here! First things first, what should we
+        call you?"
         render={() => (
           <>
             <InputField
-              placeholder="Email"
+              placeholder="Your Name"
               value={email}
               onChangeText={setEmail}
+              style={InputStyle}
             />
         
            </>

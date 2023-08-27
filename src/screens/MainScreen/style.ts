@@ -10,7 +10,8 @@ export const SignUpButtonStyles = StyleSheet.create({
     backgroundColor: 'transparent',
   },
   textstyle: {
-    fontSize: 17,
+    fontSize: 20,
+    fontFamily:'c',
     fontWeight: 'bold',
   },
 });
@@ -25,7 +26,6 @@ export const LoginButtonsStyles = StyleSheet.create({
   textstyle: {
     fontSize: 25,
     fontFamily:'MuseoSansRounded-500',
-    fontWeight: '200',
     color: Colors.WHITE,
   },
 });
@@ -51,9 +51,11 @@ export const styles = StyleSheet.create({
   logoText: {
     marginTop: 5,
     width: '50%',
+    fontFamily:'MuseoSansRounded-500',
     textAlign: 'center',
     fontSize: 20,
-    fontWeight: 'bold',
+    color:Colors.GREYISH_BROWN
+
   },
   buttonContainer: {
     position: 'absolute',

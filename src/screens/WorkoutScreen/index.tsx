@@ -37,7 +37,7 @@ const WorkoutScreen = () => {
   return (
     <>
       <Form
-        submittitle='Login'
+        submittitle='Continue'
         onSubmit={handleSucces}
         headertitle={'How many times a week do you want to be active'}
         headerimage={images.workout}

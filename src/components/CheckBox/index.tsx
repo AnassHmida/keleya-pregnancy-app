@@ -38,8 +38,10 @@ const styles = StyleSheet.create({
     width: 20,
     height: 20,
     borderWidth: 2,
-    borderColor: 'black',
+    borderCurve: 3,
     marginRight: 10,
+    backgroundColor: Colors.LIGHT_TEAL,
+    borderColor: Colors.LIGHT_TEAL,
   },
   checkboxLabel: {
     fontSize: 16,

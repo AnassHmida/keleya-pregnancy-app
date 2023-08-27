@@ -5,6 +5,8 @@ import ImageComponent from '../Image';
 import Button from '../Button';
 import { SignUpButtonStyles } from '../../screens/SignUpScreen/style';
 import { useNavigation } from '@react-navigation/native';
+import Icon from 'react-native-vector-icons/Foundation';
+import { SubmitButtonStyles } from './styles';
 
 type FormProps = {
   title?: string;
@@ -26,6 +28,8 @@ const Form = ({ title, headerimage, headertitle ,submittitle, onSubmit, render }
        
       <View style={styles.header}>
          <TouchableOpacity style={styles.smallSquare} onPress={handleBackPress}>
+         <Icon name={'arrow-left'} size={24} color="gray" />
+    
         </TouchableOpacity>
         {headertitle && <View style={{
             alignSelf:'center',
@@ -45,7 +49,7 @@ const Form = ({ title, headerimage, headertitle ,submittitle, onSubmit, render }
        {title &&  <Text style={styles.title}>{title}</Text>}
         {render()}
       </View>
-      <Button text={submittitle} onPress={onSubmit} style={SignUpButtonStyles} />
+      <Button text={submittitle} onPress={onSubmit} style={SubmitButtonStyles} />
     </View>
   );
 };
@@ -74,11 +78,9 @@ const styles = StyleSheet.create({
     width:"100%"
   },
   smallSquare: {
-    width: 20,
-    height: 20,
+ 
     zIndex: 2,
     position: 'absolute',
-    backgroundColor: 'black', 
     marginLeft: 30,
     marginTop: 50, 
   },
@@ -88,6 +90,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 25,
+    fontFamily:'MuseoSansRounded300',
     fontWeight: 'normal',
     textAlign: 'center',
     marginBottom: 15,
