@@ -4,9 +4,12 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {StatusBar} from 'react-native';
 import MainScreen from '../screens/MainScreen';
 import SignUpScreen from '../screens/SignUpScreen';
-import {Main, Name, SignIn, SignUp} from '../constants/navigation';
+import {Date, Main, Name, SignIn, SignUp, Success, Workout} from '../constants/navigation';
 import SignInScreen from '../screens/SignInScreen';
 import NameScreen from '../screens/NameScreen';
+import DateScreen from '../screens/DateScreen';
+import WorkoutScreen from '../screens/WorkoutScreen';
+import SuccessScreen from '../screens/SuccessScreen';
 
 const Stack = createStackNavigator();
 
@@ -35,6 +38,27 @@ const screenConfig = [
   {
     name: Name,
     component: NameScreen,
+    options: {
+      headerShown: false,
+    },
+  },
+  {
+    name: Date,
+    component: DateScreen,
+    options: {
+      headerShown: false,
+    },
+  },
+  {
+    name: Workout,
+    component: WorkoutScreen,
+    options: {
+      headerShown: false,
+    },
+  },
+  {
+    name: Success,
+    component: SuccessScreen,
     options: {
       headerShown: false,
     },
@@ -74,4 +98,7 @@ export type AppStackParamList = {
   SignUpScreen: undefined;
   SignInScreen: undefined;
   NameScreen: undefined
+  DateScreen: undefined
+  WorkoutScreen: undefined
+  SuccessScreen: undefined
 };

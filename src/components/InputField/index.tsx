@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { TextInput, View, StyleProp, ViewStyle, StyleSheet, TouchableOpacity } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome'; // Import Icon from react-native-vector-icons
+import Icon from 'react-native-vector-icons/FontAwesome'; 
 
 interface InputFieldProps {
   value: string;
@@ -18,7 +18,6 @@ const InputField = ({
   style,
 }: InputFieldProps) => {
   const [secure, setSecure] = useState(secureTextEntry || false);
-
   const toggleSecureEntry = () => {
     setSecure(!secure);
   };

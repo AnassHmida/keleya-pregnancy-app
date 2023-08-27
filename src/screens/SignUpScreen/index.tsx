@@ -22,8 +22,8 @@ const SignUpScreen = () => {
   return (
     <>
       <Form
-      onSubmit={()=>{}}
        submittitle='Sign Up'
+       onSubmit={()=>{}}
        headerimage={images.authentication_background}
         title="Add your details below to set up an account"
         render={() => (

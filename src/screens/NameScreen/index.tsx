@@ -8,20 +8,31 @@ import Checkbox from '../../components/CheckBox';
 import images from '../../constants/images';
 import {styles, checkBoxStyle, SignUpButtonStyles} from './style';
 import Form from '../../components/Form';
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { AppStackParamList } from '../../navigation/AppNavigator';
+import { Date } from '../../constants/navigation';
 
 const NameScreen = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [agreedToTerms, setAgreedToTerms] = useState(false);
   const [subscribedToNewsletter, setSubscribedToNewsletter] = useState(false);
+  const navigation = useNavigation<StackNavigationProp<AppStackParamList>>();
+ 
 
-  const handleSucces = () => {};
+  
+  const handleSucces = () => {
+    navigation.navigate(Date)
+  };
 
   return (
     <>
       <Form
         submittitle='Login'
-        onSubmit={()=>{}}
+        onSubmit={()=>{
+          navigation.navigate(Date)
+        }}
         headerimage={images.name}
         title="Add your details below to set up an account"
         render={() => (

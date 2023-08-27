@@ -12,13 +12,13 @@ type ButtonProps = {
   onPress: () => void;
   style: {
     containerstyle: StyleProp<ViewStyle>;
-    textStyle?: StyleProp<TextStyle>;
+    textstyle?: StyleProp<TextStyle>;
   };
 };
 
 const Button = ({text, onPress, style}: ButtonProps) => (
   <TouchableOpacity style={style.containerstyle} onPress={onPress}>
-    <Text style={[style.textStyle]}>{text}</Text>
+    <Text style={style.textstyle}>{text}</Text>
   </TouchableOpacity>
 );
 

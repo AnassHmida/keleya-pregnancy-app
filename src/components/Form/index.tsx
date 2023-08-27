@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, ImageSourcePropType, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, ImageSourcePropType, TouchableOpacity, Image } from 'react-native';
 import Colors from '../../constants/colors';
 import ImageComponent from '../Image';
 import Button from '../Button';
@@ -7,29 +7,42 @@ import { SignUpButtonStyles } from '../../screens/SignUpScreen/style';
 import { useNavigation } from '@react-navigation/native';
 
 type FormProps = {
-  title: string;
+  title?: string;
+  headertitle?: String,
   onSubmit: () => void; 
   submittitle: string;
   headerimage: ImageSourcePropType;
   render: () => React.ReactNode;
 };
 
-const Form = ({ title, headerimage, submittitle, onSubmit, render }: FormProps) => {
+const Form = ({ title, headerimage, headertitle ,submittitle, onSubmit, render }: FormProps) => {
   const navigation = useNavigation();
-
   const handleBackPress = () => {
     navigation.goBack();
   };
 
   return (
     <View style={styles.container}>
+       
       <View style={styles.header}>
-        <TouchableOpacity style={styles.smallSquare} onPress={handleBackPress}>
+         <TouchableOpacity style={styles.smallSquare} onPress={handleBackPress}>
         </TouchableOpacity>
-        <ImageComponent source={headerimage} resizeMode="contain" />
+        {headertitle && <View style={{
+            alignSelf:'center',
+                zIndex: 2,
+                width:'100%',
+                top:'20%',
+                left:'50%',
+                position: 'absolute',
+
+        }}>
+             <Text>{headertitle}</Text>
+        </View>}
+    
+        <Image source={headerimage}  style={{flex:1,zIndex:1,  width: undefined,height:undefined}} resizeMode="cover"/>
       </View>
       <View style={styles.formContainer}>
-        <Text style={styles.title}>{title}</Text>
+       {title &&  <Text style={styles.title}>{title}</Text>}
         {render()}
       </View>
       <Button text={submittitle} onPress={onSubmit} style={SignUpButtonStyles} />
@@ -56,21 +69,21 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   header: {
-    flex: 0.5,
-    backgroundColor:'red',
-    flexDirection: 'row', // Add flexDirection to align square and image
+
+    flex: 0.55,
+    width:"100%"
   },
   smallSquare: {
     width: 20,
     height: 20,
     zIndex: 2,
     position: 'absolute',
-    backgroundColor: 'black', // Customize the square's appearance
+    backgroundColor: 'black', 
     marginLeft: 30,
-    marginTop: 50, // Adjust the margin as needed
+    marginTop: 50, 
   },
   formContainer: {
-    flex: 0.5,
+    flex: 0.45,
     width: '90%',
   },
   title: {

@@ -23,9 +23,8 @@ export const LoginButtonsStyles = StyleSheet.create({
     backgroundColor: Colors.LIGHT_TEAL,
   },
   textstyle: {
-    fontSize: 25,
-    fontFamily:'MuseoSansRounded-500',
-    fontWeight: '200',
+    fontSize: 20,
+    fontWeight: 'bold',
     color: Colors.WHITE,
   },
 });
