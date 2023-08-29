@@ -1,8 +1,7 @@
 import React from 'react';
-import {View, Text, StyleSheet, ImageBackground} from 'react-native';
+import {View, Text, ImageBackground} from 'react-native';
 import ImageComponent from '../../components/Image';
 import Button from '../../components/Button';
-import Colors from '../../constants/colors';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {AppStackParamList} from '../../navigation/AppNavigator';
@@ -36,7 +35,7 @@ const MainScreen = () => {
           />
           <Button
             text="Or login"
-            onPress={() =>  navigation.navigate(SignIn)}
+            onPress={() => navigation.navigate(SignIn)}
             style={SignUpButtonStyles}
           />
         </View>

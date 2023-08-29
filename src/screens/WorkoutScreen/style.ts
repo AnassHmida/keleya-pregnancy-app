@@ -28,9 +28,7 @@ export const SignUpButtonStyles = StyleSheet.create({
     borderRadius: 10,
     backgroundColor: Colors.LIGHT_TEAL,
   },
- datepicker:{
-
- },
+  datepicker: {},
   textstyle: {
     fontSize: 20,
     fontWeight: 'bold',
@@ -39,6 +37,7 @@ export const SignUpButtonStyles = StyleSheet.create({
 });
 
 export const styles = StyleSheet.create({
+  picker: {width: '100%', height: 215},
   container: {
     flex: 1,
     backgroundColor: Colors.WHITE,
@@ -69,9 +68,7 @@ export const styles = StyleSheet.create({
     flex: 0.5,
     width: '90%',
   },
-  datePicker: {
-   
-  },
+  datePicker: {},
 });
 
 export const LoginButtonsStyles = StyleSheet.create({

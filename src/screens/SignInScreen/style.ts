@@ -28,7 +28,7 @@ export const SignUpButtonStyles = StyleSheet.create({
     borderRadius: 10,
     backgroundColor: Colors.LIGHT_TEAL,
   },
- 
+
   textstyle: {
     fontSize: 20,
     fontWeight: 'bold',

@@ -23,8 +23,9 @@ export const LoginButtonsStyles = StyleSheet.create({
     backgroundColor: Colors.LIGHT_TEAL,
   },
   textstyle: {
-    fontSize: 20,
-    fontWeight: 'bold',
+    fontSize: 25,
+
+    fontFamily: 'MuseoSansRounded-500',
     color: Colors.WHITE,
   },
 });
@@ -44,15 +45,16 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   logo: {
-    width: 100,
-    height: 100,
+    height: 80,
+    alignItems: 'center',
   },
   logoText: {
     marginTop: 5,
-    width: '50%',
+    width: '60%',
     textAlign: 'center',
     fontSize: 20,
-    fontWeight: 'bold',
+
+    fontFamily: 'MuseoSansRounded300',
   },
   buttonContainer: {
     position: 'absolute',

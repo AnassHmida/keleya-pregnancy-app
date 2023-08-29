@@ -1,16 +1,24 @@
-import React, { useState } from 'react';
-import { TextInput, View, StyleProp, ViewStyle, StyleSheet, TouchableOpacity, TextStyle } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome'; 
+import React, {useState} from 'react';
+import {
+  TextInput,
+  View,
+  StyleProp,
+  ViewStyle,
+  StyleSheet,
+  TouchableOpacity,
+  TextStyle,
+} from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 interface InputFieldProps {
   value: string;
   onChangeText: (text: string) => void;
   placeholder: string;
   secureTextEntry?: boolean;
-  style?:{
-    container:StyleProp<ViewStyle>;
-    input:StyleProp<TextStyle>;
-  } 
+  style?: {
+    container: StyleProp<ViewStyle>;
+    input: StyleProp<TextStyle>;
+  };
 }
 
 const InputField = ({
@@ -28,15 +36,17 @@ const InputField = ({
   return (
     <View style={[styles.container, style?.container]}>
       <TextInput
-        style={[styles.input,style?.input]}
+        style={[styles.input, style?.input]}
         value={value}
         onChangeText={onChangeText}
         placeholder={placeholder}
         secureTextEntry={secure}
       />
       {secureTextEntry && (
-        <TouchableOpacity style={styles.toggleButton} onPress={toggleSecureEntry}>
-          <Icon name={secure ? 'eye-slash' : 'eye'} size={24} color="black" />
+        <TouchableOpacity
+          style={styles.toggleButton}
+          onPress={toggleSecureEntry}>
+          <Icon name={secure ? 'eye-off' : 'eye'} size={24} color="black" />
         </TouchableOpacity>
       )}
     </View>
@@ -49,8 +59,8 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   input: {
-    fontFamily:'MuseoSansRounded-500',
-    paddingLeft:30,
+    fontFamily: 'MuseoSansRounded-500',
+    paddingLeft: 30,
     borderBottomWidth: 1,
     fontSize: 16,
   },

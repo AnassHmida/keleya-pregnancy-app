@@ -5,6 +5,5 @@ export default {
   name: require('../assets/images/couch_smile.jpg'),
   date: require('../assets/images/due-date-background-image.jpg'),
   workout: require('../assets/images/workout-goal-background-image.jpg'),
-  success: require('../assets/images/notifications-background-image.jpg')
-
+  success: require('../assets/images/notifications-background-image.jpg'),
 };

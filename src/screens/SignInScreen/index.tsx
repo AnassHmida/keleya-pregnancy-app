@@ -1,30 +1,34 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
-import ImageComponent from '../../components/Image';
-import Button from '../../components/Button';
 import InputField from '../../components/InputField';
-import Colors from '../../constants/colors';
-import Checkbox from '../../components/CheckBox';
 import images from '../../constants/images';
-import {styles, checkBoxStyle, SignUpButtonStyles} from './style';
 import Form from '../../components/Form';
 import {useNavigation} from '@react-navigation/native';
-import { StackNavigationProp } from '@react-navigation/stack';
-import { AppStackParamList } from '../../navigation/AppNavigator';
-import { Name, Success } from '../../constants/navigation';
+import {StackNavigationProp} from '@react-navigation/stack';
+import {AppStackParamList} from '../../navigation/AppNavigator';
+import {Success} from '../../constants/navigation';
+import {isEmailValid} from '../../constants/validationUtils';
 
 const SignInScreen = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigation = useNavigation<StackNavigationProp<AppStackParamList>>();
- 
+  const isFormValid = isEmailValid(email) && password.length > 0;
+
+  const handleSignIn = () => {
+    if (isFormValid) {
+      navigation.navigate(Success);
+    } else {
+      console.log('error');
+    }
+  };
+
   return (
     <>
       <Form
-        submittitle='Log in'
-        onSubmit={()=>{
-          navigation.navigate(Success)
-        }}
+        submittitle="Log in"
+        isFormValid={isFormValid}
+        onSubmit={handleSignIn}
+        bottomText={'Have your forgotten your password ? '}
         headerimage={images.authentication_background}
         title="Welcome back!"
         render={() => (
@@ -40,11 +44,9 @@ const SignInScreen = () => {
               value={password}
               onChangeText={setPassword}
             />
-           </>
+          </>
         )}
       />
-
-     
     </>
   );
 };

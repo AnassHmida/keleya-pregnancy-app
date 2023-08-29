@@ -4,7 +4,15 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {StatusBar} from 'react-native';
 import MainScreen from '../screens/MainScreen';
 import SignUpScreen from '../screens/SignUpScreen';
-import {Date, Main, Name, SignIn, SignUp, Success, Workout} from '../constants/navigation';
+import {
+  Date,
+  Main,
+  Name,
+  SignIn,
+  SignUp,
+  Success,
+  Workout,
+} from '../constants/navigation';
 import SignInScreen from '../screens/SignInScreen';
 import NameScreen from '../screens/NameScreen';
 import DateScreen from '../screens/DateScreen';
@@ -89,7 +97,6 @@ const AppNavigator = () => {
 };
 
 const App = () => {
-
   return (
     <KeleyaProvider>
       <AppNavigator />
@@ -103,8 +110,8 @@ export type AppStackParamList = {
   MainScreen: undefined;
   SignUpScreen: undefined;
   SignInScreen: undefined;
-  NameScreen: undefined
-  DateScreen: undefined
-  WorkoutScreen: undefined
-  SuccessScreen: undefined
+  NameScreen: undefined;
+  DateScreen: undefined;
+  WorkoutScreen: undefined;
+  SuccessScreen: undefined;
 };

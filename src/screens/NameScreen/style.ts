@@ -28,7 +28,7 @@ export const SignUpButtonStyles = StyleSheet.create({
     borderRadius: 10,
     backgroundColor: Colors.LIGHT_TEAL,
   },
- 
+
   textstyle: {
     fontSize: 20,
     fontWeight: 'bold',
@@ -42,7 +42,7 @@ export const InputStyle = StyleSheet.create({
     marginBottom: 20,
   },
   input: {
-    fontFamily:'MuseoSansRounded-500',
+    fontFamily: 'MuseoSansRounded-500',
     borderBottomWidth: 1,
     fontSize: 16,
   },

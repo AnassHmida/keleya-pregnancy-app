@@ -5,51 +5,33 @@ import {
   View,
   StyleProp,
   ViewStyle,
-  StyleSheet,
-  TextStyle,
 } from 'react-native';
-import Colors from '../../constants/colors';
+import { styles } from './style';
 
 type CheckboxProps = {
-  label: string;
+  labelSegments: {text: string; bold?: boolean}[];
   checked: boolean;
   onPress: () => void;
   style: {
     checkboxstyle?: StyleProp<ViewStyle>;
     checkedboxstyle?: StyleProp<ViewStyle>;
-    checkboxlabelstyle?: StyleProp<TextStyle>;
   };
 };
 
-const Checkbox = ({label, checked, onPress, style}: CheckboxProps) => (
-  <TouchableOpacity style={styles.container} onPress={onPress}>
+const Checkbox = ({labelSegments, checked, onPress, style}: CheckboxProps) => (
+  <TouchableOpacity
+    activeOpacity={1}
+    style={styles.container}
+    onPress={onPress}>
     <View style={[style.checkboxstyle, checked && style.checkedboxstyle]} />
-    <Text style={style.checkboxlabelstyle}>{label}</Text>
+    <Text>
+      {labelSegments.map((segment, index) => (
+        <Text key={index} style={segment.bold ? styles.boldText : null}>
+          {segment.text}
+        </Text>
+      ))}
+    </Text>
   </TouchableOpacity>
 );
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 20,
-  },
-  checkbox: {
-    width: 20,
-    height: 20,
-    borderWidth: 2,
-    borderCurve: 3,
-    marginRight: 10,
-    backgroundColor: Colors.LIGHT_TEAL,
-    borderColor: Colors.LIGHT_TEAL,
-  },
-  checkboxLabel: {
-    fontSize: 16,
-  },
-  checkedBox: {
-    backgroundColor: Colors.BUBBLE_GUM,
-    borderColor: Colors.BUBBLE_GUM,
-  },
-});
 
 export default Checkbox;
