@@ -7,7 +7,7 @@ import {StackNavigationProp} from '@react-navigation/stack';
 import {SignIn, SignUp} from '../../constants/navigation';
 import images from '../../constants/images';
 import {styles, LoginButtonsStyles, SignUpButtonStyles} from './style';
-import { AppStackParamList } from '../../Types/Types';
+import {AppStackParamList} from '../../Types/Types';
 
 const MainScreen = () => {
   const navigation = useNavigation<StackNavigationProp<AppStackParamList>>();

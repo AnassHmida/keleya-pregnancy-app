@@ -1,12 +1,6 @@
 import React from 'react';
-import {
-  TouchableOpacity,
-  Text,
-  View,
-  StyleProp,
-  ViewStyle,
-} from 'react-native';
-import { styles } from './style';
+import {TouchableOpacity, Text, View, StyleProp, ViewStyle} from 'react-native';
+import {styles} from './style';
 
 type CheckboxProps = {
   labelSegments: {text: string; bold?: boolean}[];

@@ -7,7 +7,7 @@ import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {Date} from '../../constants/navigation';
 import {KeleyaContext} from '../../context/KeleyaContext';
-import { AppStackParamList } from '../../Types/Types';
+import {AppStackParamList} from '../../Types/Types';
 
 const NameScreen = () => {
   const navigation = useNavigation<StackNavigationProp<AppStackParamList>>();
@@ -15,10 +15,10 @@ const NameScreen = () => {
 
   if (!keleyaContext) {
     return null;
-  }
+  } 
   const {name, setUsername} = keleyaContext;
-  const isFormValid =  name.length > 0;
-  
+  const isFormValid = name.length > 0 && !/\d/.test(name);
+
   return (
     <>
       <Form
@@ -26,7 +26,7 @@ const NameScreen = () => {
         submittitle="Continue"
         showGradient
         onSubmit={() => {
-          navigation.navigate(Date);
+          isFormValid && navigation.navigate(Date);
         }}
         headerimage={images.name}
         title="It's great that you're here! First things first, what should we

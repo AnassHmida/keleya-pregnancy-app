@@ -8,8 +8,8 @@ import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {Workout} from '../../constants/navigation';
 import {KeleyaContext} from '../../context/KeleyaContext';
-import { formattedDate } from '../../constants/utils';
-import { AppStackParamList } from '../../Types/Types';
+import {formattedDate} from '../../constants/utils';
+import {AppStackParamList} from '../../Types/Types';
 
 const DateScreen = () => {
   const [date, setDate] = useState(new Date());
@@ -21,10 +21,13 @@ const DateScreen = () => {
   if (!keleyaContext) {
     return null;
   }
-  const {setSelectedDate,name} = keleyaContext;
+  const {setSelectedDate, name} = keleyaContext;
+  const maxDueDate = new Date();
+  maxDueDate.setMonth(maxDueDate.getMonth() + 9);
+  maxDueDate.setDate(maxDueDate.getDate() + 7);
 
   const handleSucces = async () => {
-    await setSelectedDate(date)
+    await setSelectedDate(date);
     navigation.navigate(Workout);
   };
 
@@ -47,6 +50,7 @@ const DateScreen = () => {
               modal
               open={open}
               minimumDate={new Date()}
+              maximumDate={maxDueDate}
               date={date}
               mode="date"
               onConfirm={date => {

@@ -1,39 +1,39 @@
-import React, { useState } from 'react';
-import { KeleyaContext } from './KeleyaContext';
-import { KeleyaContextType, KeleyaProviderProps } from '../Types/Types';
+import React, {useState} from 'react';
+import {KeleyaContext} from './KeleyaContext';
+import {KeleyaContextType, KeleyaProviderProps} from '../Types/Types';
 
-const KeleyaProvider = ({ children }: KeleyaProviderProps) => {
+const KeleyaProvider = ({children}: KeleyaProviderProps) => {
   const [userProfile, setUserProfile] = useState<KeleyaContextType>({
     authenticated: false,
     userEmail: '',
     name: '',
     selectedWorkoutOption: '',
-    selectedDate: new Date(), 
-    setAuthentication: (status) => setAuthentication(status),
-    setEmail: (email) => setEmail(email),
-    setUsername: (username) => setUsername(username),
-    setWorkoutOption: (option) => setWorkoutOption(option),
-    setSelectedDate: (date) => setSelectedDate(date), // Add setSelectedDate
+    selectedDate: new Date(),
+    setAuthentication: status => setAuthentication(status),
+    setEmail: email => setEmail(email),
+    setUsername: username => setUsername(username),
+    setWorkoutOption: option => setWorkoutOption(option),
+    setSelectedDate: date => setSelectedDate(date),
   });
 
   const setAuthentication = (status: boolean) => {
-    setUserProfile({ ...userProfile, authenticated: status });
+    setUserProfile({...userProfile, authenticated: status});
   };
 
   const setEmail = (email: string) => {
-    setUserProfile({ ...userProfile, userEmail: email });
+    setUserProfile({...userProfile, userEmail: email});
   };
 
   const setUsername = (username: string) => {
-    setUserProfile({ ...userProfile, name: username });
+    setUserProfile({...userProfile, name: username});
   };
 
   const setWorkoutOption = (option: string) => {
-    setUserProfile({ ...userProfile, selectedWorkoutOption: option });
+    setUserProfile({...userProfile, selectedWorkoutOption: option});
   };
 
   const setSelectedDate = (date: Date) => {
-    setUserProfile({ ...userProfile, selectedDate: date });
+    setUserProfile({...userProfile, selectedDate: date});
   };
 
   return (

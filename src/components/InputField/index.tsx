@@ -1,17 +1,16 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {
   TextInput,
   View,
   StyleProp,
   ViewStyle,
-  StyleSheet,
   TouchableOpacity,
   TextStyle,
-  Platform, // Import the Platform module
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import {styles} from './style';
 
-interface InputFieldProps {
+type InputFieldProps = {
   value: string;
   onChangeText: (text: string) => void;
   placeholder: string;
@@ -20,7 +19,7 @@ interface InputFieldProps {
     container: StyleProp<ViewStyle>;
     input: StyleProp<TextStyle>;
   };
-}
+};
 
 const InputField = ({
   value,
@@ -37,8 +36,8 @@ const InputField = ({
   return (
     <View style={[styles.container, style?.container]}>
       <TextInput
-        style={[styles.input, style?.input]}
-        value={value}
+         style={[styles.input, style?.input, { paddingRight: secureTextEntry ? 40 : 0 }]}
+         value={value}
         onChangeText={onChangeText}
         placeholder={placeholder}
         secureTextEntry={secure}
@@ -53,24 +52,5 @@ const InputField = ({
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    width: '100%',
-    marginBottom: 20,
-  },
-  input: {
-    fontFamily: 'MuseoSansRounded-500',
-    paddingLeft: 30,
-    borderBottomWidth: 1,
-    paddingVertical: Platform.OS === 'ios' ? 10 : 5,
-    fontSize: Platform.OS === 'ios' ? 16 : 18,
-  },
-  toggleButton: {
-    position: 'absolute',
-    right: 10,
-    bottom: 12,
-  },
-});
 
 export default InputField;

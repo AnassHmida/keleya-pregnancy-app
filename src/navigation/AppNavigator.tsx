@@ -26,51 +26,30 @@ const screenConfig = [
   {
     name: Main,
     component: MainScreen,
-    options: {
-      headerShown: false,
-    },
   },
   {
     name: SignUp,
     component: SignUpScreen,
-    options: {
-      headerShown: false,
-    },
   },
   {
     name: SignIn,
     component: SignInScreen,
-    options: {
-      headerShown: false,
-    },
   },
   {
     name: Name,
     component: NameScreen,
-    options: {
-      headerShown: false,
-    },
   },
   {
     name: Date,
     component: DateScreen,
-    options: {
-      headerShown: false,
-    },
   },
   {
     name: Workout,
     component: WorkoutScreen,
-    options: {
-      headerShown: false,
-    },
   },
   {
     name: Success,
     component: SuccessScreen,
-    options: {
-      headerShown: false,
-    },
   },
 ];
 
@@ -82,13 +61,12 @@ const AppNavigator = () => {
         backgroundColor="transparent"
         translucent
       />
-      <Stack.Navigator>
+      <Stack.Navigator screenOptions={{headerShown: false}}>
         {screenConfig.map(screen => (
           <Stack.Screen
             key={screen.name}
             name={screen.name}
             component={screen.component}
-            options={screen.options}
           />
         ))}
       </Stack.Navigator>
@@ -105,4 +83,3 @@ const App = () => {
 };
 
 export default App;
-

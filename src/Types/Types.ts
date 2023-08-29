@@ -11,10 +11,9 @@ export type KeleyaContextType = {
   setUsername: (username: string) => void;
   selectedWorkoutOption: string;
   setWorkoutOption: (option: string) => void;
-  selectedDate: Date; // Add selectedDate to the context type
-  setSelectedDate: (date: Date) => void; // Add setSelectedDate to the context type
+  selectedDate: Date;
+  setSelectedDate: (date: Date) => void;
 };
-
 
 export type AppStackParamList = {
   MainScreen: undefined;

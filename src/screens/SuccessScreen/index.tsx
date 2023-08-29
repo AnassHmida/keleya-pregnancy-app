@@ -1,21 +1,27 @@
-import React, { useContext } from 'react';
+import React, {useContext} from 'react';
 import {View, Text, ImageBackground} from 'react-native';
 import Button from '../../components/Button';
 import Icon from 'react-native-vector-icons/EvilIcons';
 import images from '../../constants/images';
 import {styles, LoginButtonsStyles, SignUpButtonStyles} from './style';
-import { KeleyaContext } from '../../context/KeleyaContext';
+import {KeleyaContext} from '../../context/KeleyaContext';
 
 const SuccessScreen = () => {
-
   const keleyaContext = useContext(KeleyaContext);
 
   if (!keleyaContext) {
     return null;
   }
-  const {userEmail,authenticated,name,selectedDate,selectedWorkoutOption} = keleyaContext;
+  const {userEmail, authenticated, name, selectedDate, selectedWorkoutOption} =
+    keleyaContext;
 
-  console.log(userEmail,authenticated,name,selectedDate,selectedWorkoutOption)
+  console.log(
+    userEmail,
+    authenticated,
+    name,
+    selectedDate,
+    selectedWorkoutOption,
+  );
   return (
     <ImageBackground
       source={images.success}

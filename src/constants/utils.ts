@@ -3,9 +3,8 @@ export const isEmailValid = (email: string) => {
 };
 
 export const formattedDate = (date: Date) =>
-
- date.toLocaleDateString(undefined, {
-  day: 'numeric',
-  month: 'long',
-  year: 'numeric',
-});
+  date.toLocaleDateString(undefined, {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  });

@@ -72,7 +72,7 @@ export const styles = StyleSheet.create({
 
 export const DateButtonsStyles = StyleSheet.create({
   containerstyle: {
-alignSelf:'center',
+    alignSelf: 'center',
     width: '50%',
     paddingVertical: 10,
     borderRadius: 10,
