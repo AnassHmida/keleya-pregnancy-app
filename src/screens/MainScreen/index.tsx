@@ -4,10 +4,10 @@ import ImageComponent from '../../components/Image';
 import Button from '../../components/Button';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
-import {AppStackParamList} from '../../navigation/AppNavigator';
 import {SignIn, SignUp} from '../../constants/navigation';
 import images from '../../constants/images';
 import {styles, LoginButtonsStyles, SignUpButtonStyles} from './style';
+import { AppStackParamList } from '../../Types/Types';
 
 const MainScreen = () => {
   const navigation = useNavigation<StackNavigationProp<AppStackParamList>>();

@@ -5,9 +5,9 @@ import {InputStyle} from './style';
 import Form from '../../components/Form';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
-import {AppStackParamList} from '../../navigation/AppNavigator';
 import {Date} from '../../constants/navigation';
 import {KeleyaContext} from '../../context/KeleyaContext';
+import { AppStackParamList } from '../../Types/Types';
 
 const NameScreen = () => {
   const navigation = useNavigation<StackNavigationProp<AppStackParamList>>();
@@ -17,11 +17,14 @@ const NameScreen = () => {
     return null;
   }
   const {name, setUsername} = keleyaContext;
-
+  const isFormValid =  name.length > 0;
+  
   return (
     <>
       <Form
+        isFormValid={isFormValid}
         submittitle="Continue"
+        showGradient
         onSubmit={() => {
           navigation.navigate(Date);
         }}

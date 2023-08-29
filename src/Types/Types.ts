@@ -1,37 +1,27 @@
-export type ImageItem = {
-  id: string;
-  url: string;
-  timestamp: number;
-};
-
-export type GalleryGridProps = {
-  images?: ImageItem[];
-  getAllImages: () => void;
-};
-
 export type KeleyaProviderProps = {
   children: React.ReactNode;
 };
 
-export type File = {
-  uri: string;
-  type: string;
-  name: string;
-};
-
-export type APIResponse = {
-  status: string;
-  result: ImageItem[];
-};
-
 export type KeleyaContextType = {
+  authenticated: boolean;
+  setAuthentication: (status: boolean) => void;
+  userEmail: string;
+  setEmail: (email: string) => void;
   name: string;
-  setUsername: (user: string) => void;
+  setUsername: (username: string) => void;
+  selectedWorkoutOption: string;
+  setWorkoutOption: (option: string) => void;
+  selectedDate: Date; // Add selectedDate to the context type
+  setSelectedDate: (date: Date) => void; // Add setSelectedDate to the context type
 };
+
 
 export type AppStackParamList = {
-  GalleryApp: undefined;
-  ImageDetails: {
-    image: ImageItem;
-  };
+  MainScreen: undefined;
+  SignUpScreen: undefined;
+  SignInScreen: undefined;
+  NameScreen: undefined;
+  DateScreen: undefined;
+  WorkoutScreen: undefined;
+  SuccessScreen: undefined;
 };

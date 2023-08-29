@@ -37,7 +37,7 @@ export const SignUpButtonStyles = StyleSheet.create({
 });
 
 export const styles = StyleSheet.create({
-  picker: {width: '100%', height: 215},
+  picker: {width: '100%', height: 215,    backgroundColor: Colors.WHITE,},
   container: {
     flex: 1,
     backgroundColor: Colors.WHITE,

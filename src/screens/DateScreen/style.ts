@@ -70,16 +70,17 @@ export const styles = StyleSheet.create({
   datePicker: {},
 });
 
-export const LoginButtonsStyles = StyleSheet.create({
+export const DateButtonsStyles = StyleSheet.create({
   containerstyle: {
-    paddingVertical: 15,
+alignSelf:'center',
+    width: '50%',
+    paddingVertical: 10,
     borderRadius: 10,
     alignItems: 'center',
     backgroundColor: 'gray',
   },
   textstyle: {
     fontSize: 20,
-    fontWeight: 'bold',
-    color: Colors.WHITE,
+    color: 'blue',
   },
 });

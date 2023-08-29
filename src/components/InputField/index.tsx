@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   TextInput,
   View,
@@ -7,6 +7,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   TextStyle,
+  Platform, // Import the Platform module
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -62,7 +63,8 @@ const styles = StyleSheet.create({
     fontFamily: 'MuseoSansRounded-500',
     paddingLeft: 30,
     borderBottomWidth: 1,
-    fontSize: 16,
+    paddingVertical: Platform.OS === 'ios' ? 10 : 5,
+    fontSize: Platform.OS === 'ios' ? 16 : 18,
   },
   toggleButton: {
     position: 'absolute',

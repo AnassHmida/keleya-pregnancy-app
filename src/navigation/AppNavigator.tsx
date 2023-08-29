@@ -106,12 +106,3 @@ const App = () => {
 
 export default App;
 
-export type AppStackParamList = {
-  MainScreen: undefined;
-  SignUpScreen: undefined;
-  SignInScreen: undefined;
-  NameScreen: undefined;
-  DateScreen: undefined;
-  WorkoutScreen: undefined;
-  SuccessScreen: undefined;
-};

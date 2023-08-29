@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHeaderHeight } from "@react-navigation/elements";
 import {
   View,
   Text,
@@ -6,13 +7,17 @@ import {
   ImageSourcePropType,
   TouchableOpacity,
   Image,
+  ScrollView,
+  KeyboardAvoidingView,
+  Platform,
 } from 'react-native';
 import Colors from '../../constants/colors';
 import Button from '../Button';
-import {useNavigation} from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/Foundation';
-import {SubmitButtonInvalidStyles, SubmitButtonValidStyles} from './styles';
+import { SubmitButtonInvalidStyles, SubmitButtonValidStyles } from './styles';
 import ImageComponent from '../Image';
+import LinearGradient from 'react-native-linear-gradient';
 
 type FormProps = {
   title?: string;
@@ -23,6 +28,7 @@ type FormProps = {
   render: () => React.ReactNode;
   isFormValid?: boolean;
   bottomText?: string;
+  showGradient?: boolean;
 };
 
 const Form = ({
@@ -34,17 +40,24 @@ const Form = ({
   render,
   isFormValid,
   bottomText,
+  showGradient,
 }: FormProps) => {
   const navigation = useNavigation();
-
+  const headerHeight = useHeaderHeight();
   const handleBackPress = () => {
     navigation.goBack();
   };
 
   return (
+
+
     <View style={styles.container}>
-    
+
       <View style={styles.header}>
+        {showGradient && <LinearGradient
+          colors={['#ffffff00', 'white']}
+          style={[styles.gradientOverlay, { height: '5%' }]}
+        />}
         <TouchableOpacity style={styles.smallSquare} onPress={handleBackPress}>
           <Icon name={'arrow-left'} size={24} color="black" />
         </TouchableOpacity>
@@ -53,19 +66,26 @@ const Form = ({
             <Text style={[styles.title, styles.centerText]}>{headertitle}</Text>
           </View>
         )}
-        <ImageComponent
+   
+        <Image
           source={headerimage}
-          style={styles.headerImage}
+          style={showGradient ? { ...styles.headerImage, marginTop: -100 } : styles.headerImage}
           resizeMode="cover"
         />
+
       </View>
 
-      <View style={styles.formContainer}>
+      <KeyboardAvoidingView
+        behavior={Platform.OS === "ios" ? "padding" : undefined}
+        style={[styles.formContainer,showGradient && {marginTop: 30}]}
+        keyboardVerticalOffset={Platform.OS === "ios" ? headerHeight : 0}
+      >
+
         {title && <Text style={styles.title}>{title}</Text>}
         {render()}
-      </View>
 
-  
+      </KeyboardAvoidingView>
+
       <View style={styles.bottomContainer}>
         {bottomText && <Text style={styles.bottomText}>{bottomText}</Text>}
         <Button
@@ -77,6 +97,8 @@ const Form = ({
         />
       </View>
     </View>
+
+
   );
 };
 
@@ -88,10 +110,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   header: {
-    backgroundColor:'blue',
-    flex: 0.5,
+  
+    flex: 1,
     width: '100%',
-    
+    alignSelf:'baseline'
   },
   smallSquare: {
     zIndex: 2,
@@ -99,6 +121,7 @@ const styles = StyleSheet.create({
     marginLeft: 30,
     marginTop: 50,
   },
+  
   headerTitleContainer: {
     alignSelf: 'center',
     zIndex: 2,
@@ -106,6 +129,14 @@ const styles = StyleSheet.create({
     top: '20%',
     padding: 20,
     position: 'absolute',
+  },
+  gradientOverlay: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    bottom: 0,
+    zIndex: 4,
+    height: '0%',
   },
   centerText: {
     textAlign: 'center',
@@ -117,9 +148,11 @@ const styles = StyleSheet.create({
     width: undefined,
     height: undefined,
 
+
   },
   formContainer: {
-    flex: 0.5,
+    
+    flex: 1,
     width: '90%',
   },
   title: {
