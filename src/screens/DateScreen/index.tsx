@@ -13,7 +13,6 @@ import { AppStackParamList } from '../../Types/Types';
 import { ButtonValidStyles } from '../../components/Button/style';
 import { useTranslation } from 'react-i18next';
 import * as RNLocalize from 'react-native-localize'; 
-import strings from '../../constants/strings';
 
 const DateScreen = () => {
   const [date, setDate] = useState(new Date());

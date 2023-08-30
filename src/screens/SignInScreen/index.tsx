@@ -14,7 +14,6 @@ import {
   ButtonValidStyles,
   NobackgroundButtonStyles,
 } from '../../components/Button/style';
-import strings from '../../constants/strings';
 
 const SignInScreen = () => {
   const [email, setMail] = useState('');

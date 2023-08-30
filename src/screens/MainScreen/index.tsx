@@ -12,7 +12,6 @@ import {
   NobackgroundButtonStyles,
 } from '../../components/Button/style';
 import { useTranslation } from 'react-i18next';
-import strings from '../../constants/strings';
 
 const MainScreen = () => {
   const navigation = useNavigation<StackNavigationProp<AppStackParamList>>();

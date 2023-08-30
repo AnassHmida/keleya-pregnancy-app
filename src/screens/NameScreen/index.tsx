@@ -10,7 +10,6 @@ import {KeleyaContext} from '../../context/KeleyaContext';
 import {AppStackParamList} from '../../Types/Types';
 import {validName} from '../../constants/utils';
 import { ButtonInvalidStyles, ButtonValidStyles } from '../../components/Button/style';
-import strings from '../../constants/strings';
 import { useTranslation } from 'react-i18next';
 
 const NameScreen = () => {

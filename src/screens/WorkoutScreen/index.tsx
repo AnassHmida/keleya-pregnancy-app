@@ -10,7 +10,6 @@ import { AppStackParamList } from '../../Types/Types';
 import { KeleyaContext } from '../../context/KeleyaContext';
 import { ButtonValidStyles } from '../../components/Button/style';
 import { useTranslation } from 'react-i18next';
-import strings from '../../constants/strings';
 
 const WorkoutScreen = () => {
   const { t } = useTranslation(); 

@@ -14,7 +14,6 @@ import {
   ButtonValidStyles,
 } from '../../components/Button/style';
 import { checkBoxStyle } from '../../components/CheckBox/style';
-import strings from '../../constants/strings';
 import { useTranslation } from 'react-i18next';
 
 const SignUpScreen = () => {
