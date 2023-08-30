@@ -10,4 +10,4 @@ export const formattedDate = (date: Date) =>
   });
 
 export const validName = (name: string) =>
-  /^[a-zA-Z]+$/.test(name) && name.length > 0;
+  /^[a-zA-Z\s]+$/.test(name) && name.length > 0;

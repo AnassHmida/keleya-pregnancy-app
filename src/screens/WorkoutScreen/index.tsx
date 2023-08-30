@@ -23,10 +23,11 @@ const WorkoutScreen = () => {
   const {setAuthentication, setWorkoutOption} = keleyaContext;
 
   const handleSucces = async () => {
-    await setAuthentication(true);
-    await setWorkoutOption(selectedWorkout);
+    setAuthentication(true);
+    setWorkoutOption(selectedWorkout);
     navigation.navigate(Success);
   };
+  
   const { OnceAWeek,
   TwoTimesAWeek,
   ThreeTimesAWeek,

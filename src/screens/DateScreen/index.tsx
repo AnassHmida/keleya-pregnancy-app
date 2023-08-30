@@ -28,8 +28,8 @@ const DateScreen = () => {
   const maxDueDate = new Date();
   maxDueDate.setMonth(maxDueDate.getMonth() + 9);
   maxDueDate.setDate(maxDueDate.getDate() + 7);
-  const handleSucces = async () => {
-    await setSelectedDate(date);
+  const handleSucces = () => {
+    setSelectedDate(date);
     navigation.navigate(Workout);
   };
 
