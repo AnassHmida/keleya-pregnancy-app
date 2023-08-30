@@ -40,7 +40,7 @@ const DateScreen = () => {
       onOriginalButtonPress={handleSucces}
       OriginalButtonStyles={ButtonValidStyles}
       headerimage={images.date}
-      title={t('WhenIsYourBabyDue', {name})}
+      title={t('WhenIsYourBabyDue', {name} )}
       render={() => (
         <>
           <Button

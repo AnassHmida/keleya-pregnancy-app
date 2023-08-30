@@ -1,6 +1,6 @@
 export default {
   ContinueButton: 'Weiter',
-  WhenIsYourBabyDue: 'Wann ist dein Baby fällig, %{name}?',
+  WhenIsYourBabyDue: 'Wann ist dein Baby fällig, {{name}}?',
   ForAFitAndRelaxedPregnancy: 'Für eine fitte und entspannte Schwangerschaft',
   GetStartedButton: "Los geht's",
   OrLoginButton: 'Oder einloggen',
