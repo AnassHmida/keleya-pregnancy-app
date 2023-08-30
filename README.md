@@ -19,7 +19,7 @@ This project showcases a mini onboarding flow for a pregnancy app using React Na
 
 1. Clone this repository to your local machine.
 2. Install dependencies using `yarn`.
-3. Run the app on android using `yarn android` or on ios using `yarn android`.
+3. Run the app on android using `yarn android` or on ios using `yarn ios`.
 
 ## Testing
 
