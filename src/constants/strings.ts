@@ -22,12 +22,15 @@ export default {
     SkipButton: "Skip",
     AllowNotificationsButton: "Allow notifications",
     HowManyTimesAWeek: "How many times a week do you want to be active?",
-    OnceAWeek: "Once a week",
-    TwoTimesAWeek: "2 times a week",
-    ThreeTimesAWeek: "3 times a week",
-    FourTimesAWeek: "4 times a week",
-    FiveTimesAWeek: "5 times a week",
-    SixTimesAWeek: "6 times a week",
-    SevenTimesAWeek: "7 times a week",
+    WeeksPerDay: [
+        "Once a week",
+        "2 times a week",
+        "3 times a week",
+        "4 times a week",
+        "5 times a week",
+        "6 times a week",
+        "7 times a week",
+      ],
+    
   };
   

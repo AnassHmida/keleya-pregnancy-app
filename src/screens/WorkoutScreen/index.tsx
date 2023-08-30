@@ -13,7 +13,14 @@ import strings from '../../constants/strings';
 
 const WorkoutScreen = () => {
   const keleyaContext = useContext(KeleyaContext);
-  const [selectedWorkout, setSelectedWorkout] = useState<string>('');
+  const { 
+    ContinueButton,
+    HowManyTimesAWeek,
+    WeeksPerDay
+  } = strings
+  
+  const defaultFrequency = WeeksPerDay[2]
+  const [selectedWorkout, setSelectedWorkout] = useState<string>(defaultFrequency);
   const navigation = useNavigation<StackNavigationProp<AppStackParamList>>();
 
   if (!keleyaContext) {
@@ -24,29 +31,12 @@ const WorkoutScreen = () => {
 
   const handleSucces = async () => {
     setAuthentication(true);
+    console.log(selectedWorkout)
     setWorkoutOption(selectedWorkout);
     navigation.navigate(Success);
   };
   
-  const { OnceAWeek,
-  TwoTimesAWeek,
-  ThreeTimesAWeek,
-  FourTimesAWeek,
-  FiveTimesAWeek,
-  SixTimesAWeek,
-  SevenTimesAWeek,
-  ContinueButton,
-  HowManyTimesAWeek
-} = strings
-  const frequencyOptions = [
-    OnceAWeek,
-    TwoTimesAWeek,
-    ThreeTimesAWeek,
-    FourTimesAWeek,
-    FiveTimesAWeek,
-    SixTimesAWeek,
-    SevenTimesAWeek,
-  ];
+  
 
   return (
     <Form
@@ -58,8 +48,8 @@ const WorkoutScreen = () => {
       render={() => (
         <Picker
           style={styles.picker}
-          selectedValue={frequencyOptions[2]}
-          pickerData={frequencyOptions}
+          selectedValue={defaultFrequency}
+          pickerData={WeeksPerDay}
           onValueChange={(value: string) => {
             setSelectedWorkout(value);
           }}
