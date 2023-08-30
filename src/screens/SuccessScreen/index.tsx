@@ -18,11 +18,12 @@ const SuccessScreen = () => {
   if (!keleyaContext) {
     return null;
   }
-  const { userEmail, authenticated, name, selectedDate, selectedWorkoutOption } =
+  const data =
     keleyaContext;
 
-  console.log(userEmail, authenticated, name, selectedDate, selectedWorkoutOption);
-
+  console.log(data)
+    
+  
   return (
     <ImageBackground
       source={images.success}
