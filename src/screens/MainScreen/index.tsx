@@ -9,6 +9,7 @@ import {AppStackParamList} from '../../Types/Types';
 import Form from '../../components/Form';
 import {
   LoginButtonsStyles,
+  NobackgroundButtonBoldStyles,
   NobackgroundButtonStyles,
 } from '../../components/Button/style';
 import {useTranslation} from 'react-i18next';
@@ -32,7 +33,7 @@ const MainScreen = () => {
         onOriginalButtonPress={() => {
           navigation.navigate(SignIn);
         }}
-        OriginalButtonStyles={NobackgroundButtonStyles}
+        OriginalButtonStyles={NobackgroundButtonBoldStyles}
       />
     </ImageBackground>
   );

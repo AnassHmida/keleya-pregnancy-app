@@ -1,7 +1,3 @@
-/**
- * @format
- */
-
 import 'react-native';
 
 

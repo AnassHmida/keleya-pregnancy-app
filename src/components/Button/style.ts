@@ -24,6 +24,20 @@ export const NobackgroundButtonStyles = StyleSheet.create({
   },
   textstyle: {
     fontSize: 20,
+    fontWeight: 'normal',
+  },
+});
+
+export const NobackgroundButtonBoldStyles = StyleSheet.create({
+  containerstyle: {
+    paddingVertical: 15,
+    borderRadius: 10,
+    alignItems: 'center',
+    marginBottom: 10,
+    backgroundColor: 'transparent',
+  },
+  textstyle: {
+    fontSize: 20,
     fontWeight: 'bold',
   },
 });
