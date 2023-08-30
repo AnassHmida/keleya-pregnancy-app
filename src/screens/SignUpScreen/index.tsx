@@ -2,7 +2,6 @@ import React, {useContext, useState} from 'react';
 import InputField from '../../components/InputField';
 import Checkbox from '../../components/CheckBox';
 import images from '../../constants/images';
-import {checkBoxStyle} from './style';
 import Form from '../../components/Form';
 import {Name} from '../../constants/navigation';
 import {useNavigation} from '@react-navigation/native';
@@ -10,10 +9,8 @@ import {StackNavigationProp} from '@react-navigation/stack';
 import {isEmailValid} from '../../constants/utils';
 import {AppStackParamList} from '../../Types/Types';
 import {KeleyaContext} from '../../context/KeleyaContext';
-import {
-  SubmitButtonInvalidStyles,
-  SubmitButtonValidStyles,
-} from '../../components/Form/style';
+import { ButtonInvalidStyles, ButtonValidStyles } from '../../components/Button/style';
+import { checkBoxStyle } from '../../components/CheckBox/style';
 
 const SignUpScreen = () => {
   const [email, setMail] = useState('');
@@ -47,7 +44,7 @@ const SignUpScreen = () => {
       OriginalButtonText="Log in"
       onOriginalButtonPress={handleSignUp}
       OriginalButtonStyles={
-        isFormValid ? SubmitButtonValidStyles : SubmitButtonInvalidStyles
+        isFormValid ? ButtonValidStyles : ButtonInvalidStyles
       }
       headerimage={images.authentication_background}
       title="Add your details below to set up an account"

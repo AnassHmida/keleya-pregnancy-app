@@ -1,23 +1,6 @@
 import {StyleSheet} from 'react-native';
 import Colors from '../../constants/colors';
 
-export const checkBoxStyle = StyleSheet.create({
-  checkboxstyle: {
-    width: 20,
-    height: 20,
-    borderWidth: 2,
-    borderColor: 'black',
-    marginRight: 10,
-  },
-  checkboxlabelstyle: {
-    fontSize: 16,
-  },
-  checkedboxstyle: {
-    backgroundColor: Colors.BUBBLE_GUM,
-    borderColor: Colors.BUBBLE_GUM,
-  },
-});
-
 export const styles = StyleSheet.create({
   container: {
     flex: 1,

@@ -2,10 +2,10 @@ import React, {useContext} from 'react';
 import {ImageBackground} from 'react-native';
 
 import images from '../../constants/images';
-import {styles, LoginButtonsStyles} from './style';
+import {styles} from './style';
 import {KeleyaContext} from '../../context/KeleyaContext';
 import Form from '../../components/Form';
-import {NobackgroundButtonStyles} from '../../components/Button/style';
+import {LoginButtonsStyles, NobackgroundButtonStyles} from '../../components/Button/style';
 
 const SuccessScreen = () => {
   const keleyaContext = useContext(KeleyaContext);

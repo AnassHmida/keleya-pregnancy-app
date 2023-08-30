@@ -11,10 +11,12 @@ type ImageComponentProps = {
   source: ImageSourcePropType;
   style?: ImageStyle;
   resizeMode?: ImageResizeMode;
+  testID?:string;
 };
 
-const ImageComponent = ({source, style, resizeMode}: ImageComponentProps) => (
+const ImageComponent = ({source, style, resizeMode,testID}: ImageComponentProps) => (
   <Image
+  testID={testID}
     source={source}
     style={[styles.image, style]}
     resizeMode={resizeMode}

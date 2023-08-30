@@ -8,11 +8,7 @@ import {Success} from '../../constants/navigation';
 import {isEmailValid} from '../../constants/utils';
 import {AppStackParamList} from '../../Types/Types';
 import {KeleyaContext} from '../../context/KeleyaContext';
-import {
-  SubmitButtonInvalidStyles,
-  SubmitButtonValidStyles,
-} from '../../components/Form/style';
-import {NobackgroundButtonStyles} from '../../components/Button/style';
+import {ButtonInvalidStyles, ButtonValidStyles, NobackgroundButtonStyles} from '../../components/Button/style';
 
 const SignInScreen = () => {
   const [email, setMail] = useState('');
@@ -45,7 +41,7 @@ const SignInScreen = () => {
         OriginalButtonText="Log in"
         onOriginalButtonPress={handleSignIn}
         OriginalButtonStyles={
-          isFormValid ? SubmitButtonValidStyles : SubmitButtonInvalidStyles
+          isFormValid ? ButtonValidStyles : ButtonInvalidStyles
         }
         bottomText={'Have your forgotten your password ? '}
         headerimage={images.authentication_background}

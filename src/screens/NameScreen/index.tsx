@@ -9,10 +9,7 @@ import {Date} from '../../constants/navigation';
 import {KeleyaContext} from '../../context/KeleyaContext';
 import {AppStackParamList} from '../../Types/Types';
 import {validName} from '../../constants/utils';
-import {
-  SubmitButtonInvalidStyles,
-  SubmitButtonValidStyles,
-} from '../../components/Form/style';
+import { ButtonInvalidStyles, ButtonValidStyles } from '../../components/Button/style';
 
 const NameScreen = () => {
   const navigation = useNavigation<StackNavigationProp<AppStackParamList>>();
@@ -32,7 +29,7 @@ const NameScreen = () => {
           isFormValid && navigation.navigate(Date);
         }}
         OriginalButtonStyles={
-          isFormValid ? SubmitButtonValidStyles : SubmitButtonInvalidStyles
+          isFormValid ? ButtonValidStyles : ButtonInvalidStyles
         }
         showGradient
         headerimage={images.name}

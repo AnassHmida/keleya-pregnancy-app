@@ -42,20 +42,34 @@ export const LoginButtonsStyles = StyleSheet.create({
   },
 });
 
-export const SignUpButtonStyles = StyleSheet.create({
+export const ButtonValidStyles = StyleSheet.create({
   containerstyle: {
-    position: 'absolute',
-    bottom: 0,
-    marginBottom: 20,
     paddingVertical: 15,
-    width: '90%',
     borderRadius: 10,
     backgroundColor: Colors.LIGHT_TEAL,
   },
 
   textstyle: {
-    fontSize: 20,
-    fontWeight: 'bold',
+    fontSize: 25,
+    fontFamily: 'MuseoSansRounded-500',
+    textAlign: 'center',
     color: Colors.WHITE,
   },
 });
+
+export const ButtonInvalidStyles = StyleSheet.create({
+  containerstyle: {
+    paddingVertical: 15,
+    borderRadius: 10,
+    backgroundColor: Colors.WARM_GREY,
+  },
+  textstyle: {
+    fontSize: 25,
+    fontFamily: 'MuseoSansRounded-500',
+    textAlign: 'center',
+    color: Colors.WHITE,
+  },
+});
+
+
+

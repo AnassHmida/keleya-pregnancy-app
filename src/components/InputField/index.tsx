@@ -48,6 +48,7 @@ const InputField = ({
       />
       {secureTextEntry && (
         <TouchableOpacity
+          testID="toggleButton"
           style={styles.toggleButton}
           onPress={toggleSecureEntry}>
           <Icon name={secure ? 'eye-off' : 'eye'} size={24} color="black" />

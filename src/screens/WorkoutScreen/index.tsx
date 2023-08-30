@@ -8,7 +8,7 @@ import {Success} from '../../constants/navigation';
 import {styles} from './style';
 import {AppStackParamList} from '../../Types/Types';
 import {KeleyaContext} from '../../context/KeleyaContext';
-import {SubmitButtonValidStyles} from '../../components/Form/style';
+import { ButtonValidStyles } from '../../components/Button/style';
 
 const WorkoutScreen = () => {
   const keleyaContext = useContext(KeleyaContext);
@@ -40,7 +40,7 @@ const WorkoutScreen = () => {
     <Form
       OriginalButtonText="Continue"
       onOriginalButtonPress={handleSucces}
-      OriginalButtonStyles={SubmitButtonValidStyles}
+      OriginalButtonStyles={ButtonValidStyles}
       headertitle={'How many times a week do you want to be active ? '}
       headerimage={images.workout}
       render={() => (
