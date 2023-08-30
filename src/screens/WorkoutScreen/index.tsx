@@ -14,7 +14,14 @@ import { useTranslation } from 'react-i18next';
 const WorkoutScreen = () => {
   const { t } = useTranslation(); 
   const keleyaContext = useContext(KeleyaContext);
-  const [selectedWorkout, setSelectedWorkout] = useState<string>('');
+  const { 
+    ContinueButton,
+    HowManyTimesAWeek,
+    WeeksPerDay
+  } = strings
+  
+  const defaultFrequency = WeeksPerDay[2]
+  const [selectedWorkout, setSelectedWorkout] = useState<string>(defaultFrequency);
   const navigation = useNavigation<StackNavigationProp<AppStackParamList>>();
 
   if (!keleyaContext) {
@@ -25,19 +32,29 @@ const WorkoutScreen = () => {
 
   const handleSucces = async () => {
     setAuthentication(true);
+    console.log(selectedWorkout)
     setWorkoutOption(selectedWorkout);
     navigation.navigate(Success);
   };
   
-
+  const { OnceAWeek,
+  TwoTimesAWeek,
+  ThreeTimesAWeek,
+  FourTimesAWeek,
+  FiveTimesAWeek,
+  SixTimesAWeek,
+  SevenTimesAWeek,
+  ContinueButton,
+  HowManyTimesAWeek
+} = strings
   const frequencyOptions = [
-    t('OnceAWeek'),   
-    t('TwoTimesAWeek'),    
-    t('ThreeTimesAWeek'),  
-    t('FourTimesAWeek'),   
-    t('FiveTimesAWeek'),   
-    t('SixTimesAWeek'),    
-    t('SevenTimesAWeek')   
+    OnceAWeek,
+    TwoTimesAWeek,
+    ThreeTimesAWeek,
+    FourTimesAWeek,
+    FiveTimesAWeek,
+    SixTimesAWeek,
+    SevenTimesAWeek,
   ];
 
   return (
@@ -50,8 +67,8 @@ const WorkoutScreen = () => {
       render={() => (
         <Picker
           style={styles.picker}
-          selectedValue={frequencyOptions[2]}
-          pickerData={frequencyOptions}
+          selectedValue={defaultFrequency}
+          pickerData={WeeksPerDay}
           onValueChange={(value: string) => {
             setSelectedWorkout(value);
           }}
