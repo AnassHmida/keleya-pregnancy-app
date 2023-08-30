@@ -15,8 +15,8 @@ export default {
     IveReadThe: "Ich habe die ",
     PrivacyPolicy: "Datenschutzrichtlinie",
     IAcceptThe: "Ich akzeptiere die ",
-    TermsAndConditions: "Nutzungsbedingungen", 
-    And: " und ", 
+    TermsAndConditions: "Nutzungsbedingungen",
+    And: " und ",
     KeleyasAdvice: "Keleyas Ratschläge",
     GetNotificationsTitle: "Erhalte Benachrichtigungen, um deine Motivation zu steigern",
     SkipButton: "Überspringen",
@@ -29,5 +29,13 @@ export default {
     FiveTimesAWeek: "5-mal pro Woche",
     SixTimesAWeek: "6-mal pro Woche",
     SevenTimesAWeek: "7-mal pro Woche",
-  };
-  
+    WeeksPerDay: [
+        "Einmal pro Woche",
+        "2-mal pro Woche",
+        "3-mal pro Woche",
+        "4-mal pro Woche",
+        "5-mal pro Woche",
+        "6-mal pro Woche",
+        "7-mal pro Woche",
+    ],
+};

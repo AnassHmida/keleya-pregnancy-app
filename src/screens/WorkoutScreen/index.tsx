@@ -10,18 +10,11 @@ import { AppStackParamList } from '../../Types/Types';
 import { KeleyaContext } from '../../context/KeleyaContext';
 import { ButtonValidStyles } from '../../components/Button/style';
 import { useTranslation } from 'react-i18next';
+import en from '../../translations/en';
 
 const WorkoutScreen = () => {
-  const { t } = useTranslation(); 
+  const { t } = useTranslation();
   const keleyaContext = useContext(KeleyaContext);
-  const { 
-    ContinueButton,
-    HowManyTimesAWeek,
-    WeeksPerDay
-  } = strings
-  
-  const defaultFrequency = WeeksPerDay[2]
-  const [selectedWorkout, setSelectedWorkout] = useState<string>(defaultFrequency);
   const navigation = useNavigation<StackNavigationProp<AppStackParamList>>();
 
   if (!keleyaContext) {
@@ -30,47 +23,36 @@ const WorkoutScreen = () => {
 
   const { setAuthentication, setWorkoutOption } = keleyaContext;
 
-  const handleSucces = async () => {
+  const {WeeksPerDay} = en
+  const defaultFrequencyIndex: number = 2;
+
+
+  const translatedWeeksPerDay: string[] = t('WeeksPerDay', { returnObjects: true }) as string[];
+
+  const [selectedWorkout, setSelectedWorkout] = useState<string>(
+    translatedWeeksPerDay[defaultFrequencyIndex]
+  );
+
+  const handleSuccess = async () => {
     setAuthentication(true);
-    console.log(selectedWorkout)
     setWorkoutOption(selectedWorkout);
     navigation.navigate(Success);
   };
-  
-  const { OnceAWeek,
-  TwoTimesAWeek,
-  ThreeTimesAWeek,
-  FourTimesAWeek,
-  FiveTimesAWeek,
-  SixTimesAWeek,
-  SevenTimesAWeek,
-  ContinueButton,
-  HowManyTimesAWeek
-} = strings
-  const frequencyOptions = [
-    OnceAWeek,
-    TwoTimesAWeek,
-    ThreeTimesAWeek,
-    FourTimesAWeek,
-    FiveTimesAWeek,
-    SixTimesAWeek,
-    SevenTimesAWeek,
-  ];
 
   return (
     <Form
-      OriginalButtonText={t('ContinueButton')} 
-      onOriginalButtonPress={handleSucces}
+      OriginalButtonText={t('ContinueButton')}
+      onOriginalButtonPress={handleSuccess}
       OriginalButtonStyles={ButtonValidStyles}
-      headertitle={t('HowManyTimesAWeek')} 
+      headertitle={t('HowManyTimesAWeek')}
       headerimage={images.workout}
       render={() => (
         <Picker
           style={styles.picker}
-          selectedValue={defaultFrequency}
-          pickerData={WeeksPerDay}
+          selectedValue={selectedWorkout}
+          pickerData={translatedWeeksPerDay}
           onValueChange={(value: string) => {
-            setSelectedWorkout(value);
+            setSelectedWorkout(WeeksPerDay[translatedWeeksPerDay.indexOf(value)]);
           }}
         />
       )}
