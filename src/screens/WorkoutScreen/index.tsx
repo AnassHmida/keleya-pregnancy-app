@@ -1,17 +1,19 @@
-import React, {useContext, useState} from 'react';
-import {Picker} from 'react-native-wheel-pick';
+import React, { useContext, useState } from 'react';
+import { Picker } from 'react-native-wheel-pick';
 import images from '../../constants/images';
 import Form from '../../components/Form';
-import {useNavigation} from '@react-navigation/native';
-import {StackNavigationProp} from '@react-navigation/stack';
-import {Success} from '../../constants/navigation';
-import {styles} from './style';
-import {AppStackParamList} from '../../Types/Types';
-import {KeleyaContext} from '../../context/KeleyaContext';
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { Success } from '../../constants/navigation';
+import { styles } from './style';
+import { AppStackParamList } from '../../Types/Types';
+import { KeleyaContext } from '../../context/KeleyaContext';
 import { ButtonValidStyles } from '../../components/Button/style';
+import { useTranslation } from 'react-i18next';
 import strings from '../../constants/strings';
 
 const WorkoutScreen = () => {
+  const { t } = useTranslation(); 
   const keleyaContext = useContext(KeleyaContext);
   const [selectedWorkout, setSelectedWorkout] = useState<string>('');
   const navigation = useNavigation<StackNavigationProp<AppStackParamList>>();
@@ -20,7 +22,7 @@ const WorkoutScreen = () => {
     return null;
   }
 
-  const {setAuthentication, setWorkoutOption} = keleyaContext;
+  const { setAuthentication, setWorkoutOption } = keleyaContext;
 
   const handleSucces = async () => {
     setAuthentication(true);
@@ -28,32 +30,23 @@ const WorkoutScreen = () => {
     navigation.navigate(Success);
   };
   
-  const { OnceAWeek,
-  TwoTimesAWeek,
-  ThreeTimesAWeek,
-  FourTimesAWeek,
-  FiveTimesAWeek,
-  SixTimesAWeek,
-  SevenTimesAWeek,
-  ContinueButton,
-  HowManyTimesAWeek
-} = strings
+
   const frequencyOptions = [
-    OnceAWeek,
-    TwoTimesAWeek,
-    ThreeTimesAWeek,
-    FourTimesAWeek,
-    FiveTimesAWeek,
-    SixTimesAWeek,
-    SevenTimesAWeek,
+    t('OnceAWeek'),   
+    t('TwoTimesAWeek'),    
+    t('ThreeTimesAWeek'),  
+    t('FourTimesAWeek'),   
+    t('FiveTimesAWeek'),   
+    t('SixTimesAWeek'),    
+    t('SevenTimesAWeek')   
   ];
 
   return (
     <Form
-      OriginalButtonText={ContinueButton}
+      OriginalButtonText={t('ContinueButton')} 
       onOriginalButtonPress={handleSucces}
       OriginalButtonStyles={ButtonValidStyles}
-      headertitle={HowManyTimesAWeek}
+      headertitle={t('HowManyTimesAWeek')} 
       headerimage={images.workout}
       render={() => (
         <Picker

@@ -3,9 +3,9 @@ import { render } from '@testing-library/react-native';
 import Content from '../index';
 import { Text } from 'react-native';
 
-// Mock the useHeaderHeight function
+
 jest.mock('@react-navigation/elements', () => ({
-  useHeaderHeight: jest.fn(() => 50), // Mock the header height value
+  useHeaderHeight: jest.fn(() => 50), 
 }));
 
 describe('Content component', () => {

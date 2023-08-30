@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
-import { useNavigation } from '@react-navigation/native'; // Mock this module
+import { useNavigation } from '@react-navigation/native'; 
 import Form from '../index';
 import { ButtonValidStyles } from '../../Button/style';
 
@@ -10,7 +10,7 @@ jest.mock('@react-navigation/native', () => ({
 
 jest.mock('react-native-linear-gradient', () => 'LinearGradient');
 jest.mock('@react-navigation/elements', () => ({
-    useHeaderHeight: jest.fn(() => 50), // Mock the header height value
+    useHeaderHeight: jest.fn(() => 50),
 }));
 
 

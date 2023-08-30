@@ -11,6 +11,7 @@ import {AppStackParamList} from '../../Types/Types';
 import {validName} from '../../constants/utils';
 import { ButtonInvalidStyles, ButtonValidStyles } from '../../components/Button/style';
 import strings from '../../constants/strings';
+import { useTranslation } from 'react-i18next';
 
 const NameScreen = () => {
   const navigation = useNavigation<StackNavigationProp<AppStackParamList>>();
@@ -19,14 +20,14 @@ const NameScreen = () => {
   if (!keleyaContext) {
     return null;
   }
+  const { t } = useTranslation(); 
   const {name, setUsername} = keleyaContext;
   const isFormValid = validName(name);
-  const { ItsGreatThatYoureHere , YourNamePlaceholder , ContinueButton} = strings
 
   return (
     <>
       <Form
-        OriginalButtonText={ContinueButton}
+        OriginalButtonText={t('ContinueButton')}
         onOriginalButtonPress={() => {
           isFormValid && navigation.navigate(Date);
         }}
@@ -35,11 +36,11 @@ const NameScreen = () => {
         }
         showGradient
         headerimage={images.name}
-        title={ItsGreatThatYoureHere}
+        title={t('ItsGreatThatYoureHere')}
         render={() => (
           <>
             <InputField
-              placeholder={YourNamePlaceholder}
+              placeholder={t('YourNamePlaceholder')}
               value={name}
               onChangeText={setUsername}
               style={InputStyle}
