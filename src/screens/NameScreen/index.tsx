@@ -8,6 +8,7 @@ import {StackNavigationProp} from '@react-navigation/stack';
 import {Date} from '../../constants/navigation';
 import {KeleyaContext} from '../../context/KeleyaContext';
 import {AppStackParamList} from '../../Types/Types';
+import {validName} from '../../constants/utils';
 
 const NameScreen = () => {
   const navigation = useNavigation<StackNavigationProp<AppStackParamList>>();
@@ -15,9 +16,9 @@ const NameScreen = () => {
 
   if (!keleyaContext) {
     return null;
-  } 
+  }
   const {name, setUsername} = keleyaContext;
-  const isFormValid = name.length > 0 && !/\d/.test(name);
+  const isFormValid = validName(name);
 
   return (
     <>

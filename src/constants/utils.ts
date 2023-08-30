@@ -8,3 +8,6 @@ export const formattedDate = (date: Date) =>
     month: 'long',
     year: 'numeric',
   });
+
+export const validName = (name: string) =>
+  /^[a-zA-Z]+$/.test(name) && name.length > 0;

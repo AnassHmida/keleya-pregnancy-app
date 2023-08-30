@@ -25,46 +25,43 @@ const DateScreen = () => {
   const maxDueDate = new Date();
   maxDueDate.setMonth(maxDueDate.getMonth() + 9);
   maxDueDate.setDate(maxDueDate.getDate() + 7);
-
   const handleSucces = async () => {
     await setSelectedDate(date);
     navigation.navigate(Workout);
   };
 
   return (
-    <>
-      <Form
-        submittitle="Continue"
-        onSubmit={handleSucces}
-        isFormValid={true}
-        headerimage={images.date}
-        title={`When is your baby due, ${name}?`}
-        render={() => (
-          <>
-            <Button
-              text={formattedDate(date)}
-              onPress={() => setOpen(true)}
-              style={DateButtonsStyles}
-            />
-            <DatePicker
-              modal
-              open={open}
-              minimumDate={new Date()}
-              maximumDate={maxDueDate}
-              date={date}
-              mode="date"
-              onConfirm={date => {
-                setOpen(false);
-                setDate(date);
-              }}
-              onCancel={() => {
-                setOpen(false);
-              }}
-            />
-          </>
-        )}
-      />
-    </>
+    <Form
+      submittitle="Continue"
+      onSubmit={handleSucces}
+      isFormValid={true}
+      headerimage={images.date}
+      title={`When is your baby due, ${name}?`}
+      render={() => (
+        <>
+          <Button
+            text={formattedDate(date)}
+            onPress={() => setOpen(true)}
+            style={DateButtonsStyles}
+          />
+          <DatePicker
+            modal
+            open={open}
+            minimumDate={new Date()}
+            maximumDate={maxDueDate}
+            date={date}
+            mode="date"
+            onConfirm={date => {
+              setOpen(false);
+              setDate(date);
+            }}
+            onCancel={() => {
+              setOpen(false);
+            }}
+          />
+        </>
+      )}
+    />
   );
 };
 

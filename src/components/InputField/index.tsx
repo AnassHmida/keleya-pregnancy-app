@@ -36,8 +36,12 @@ const InputField = ({
   return (
     <View style={[styles.container, style?.container]}>
       <TextInput
-         style={[styles.input, style?.input, { paddingRight: secureTextEntry ? 40 : 0 }]}
-         value={value}
+        style={[
+          styles.input,
+          style?.input,
+          {paddingRight: secureTextEntry ? 40 : 0},
+        ]}
+        value={value}
         onChangeText={onChangeText}
         placeholder={placeholder}
         secureTextEntry={secure}

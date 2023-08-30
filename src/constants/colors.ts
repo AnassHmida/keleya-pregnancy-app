@@ -6,6 +6,7 @@ const Colors = {
   GREYISH_BROWN: '#4a4a4a',
   WARM_GREY: '#9b9b9b',
   BUBBLE_GUM: '#e97db5',
+  WHITE_TRANSPARENT: '#ffffff00',
 };
 
 export default Colors;
