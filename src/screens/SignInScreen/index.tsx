@@ -1,14 +1,14 @@
-import React, { useContext, useState } from 'react';
+import React, {useContext, useState} from 'react';
 import InputField from '../../components/InputField';
 import images from '../../constants/images';
 import Form from '../../components/Form';
-import { useNavigation } from '@react-navigation/native';
-import { StackNavigationProp } from '@react-navigation/stack';
-import { Success } from '../../constants/navigation';
-import { isEmailValid } from '../../constants/utils';
-import { AppStackParamList } from '../../Types/Types';
-import { KeleyaContext } from '../../context/KeleyaContext';
-import { useTranslation } from 'react-i18next';
+import {useNavigation} from '@react-navigation/native';
+import {StackNavigationProp} from '@react-navigation/stack';
+import {Success} from '../../constants/navigation';
+import {isEmailValid} from '../../constants/utils';
+import {AppStackParamList} from '../../Types/Types';
+import {KeleyaContext} from '../../context/KeleyaContext';
+import {useTranslation} from 'react-i18next';
 import {
   ButtonInvalidStyles,
   ButtonValidStyles,
@@ -21,14 +21,12 @@ const SignInScreen = () => {
   const navigation = useNavigation<StackNavigationProp<AppStackParamList>>();
   const isFormValid = isEmailValid(email) && password.length > 0;
   const keleyaContext = useContext(KeleyaContext);
-  
 
   if (!keleyaContext) {
     return null;
   }
-  const { t } = useTranslation();
-  const { setAuthentication, setEmail } = keleyaContext;
-
+  const {t} = useTranslation();
+  const {setAuthentication, setEmail} = keleyaContext;
 
   const handleSignIn = () => {
     if (isFormValid) {
@@ -44,15 +42,15 @@ const SignInScreen = () => {
     <>
       <Form
         AdditionalButtonStyles={NobackgroundButtonStyles}
-        AdditionalButtonText={t('HaveYouForgottenYourPassword')} 
+        AdditionalButtonText={t('HaveYouForgottenYourPassword')}
         onAdditionalButtonPress={() => {}}
-        OriginalButtonText={t('LoginButton')} 
+        OriginalButtonText={t('LoginButton')}
         onOriginalButtonPress={handleSignIn}
         OriginalButtonStyles={
           isFormValid ? ButtonValidStyles : ButtonInvalidStyles
         }
         headerimage={images.authentication_background}
-        title={t('WelcomeBack')} 
+        title={t('WelcomeBack')}
         render={() => (
           <>
             <InputField
@@ -61,7 +59,7 @@ const SignInScreen = () => {
               onChangeText={setMail}
             />
             <InputField
-              placeholder={t('EnterPasswordPlaceholder')} 
+              placeholder={t('EnterPasswordPlaceholder')}
               secureTextEntry
               value={password}
               onChangeText={setPassword}

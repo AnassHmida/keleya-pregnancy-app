@@ -1,6 +1,6 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react-native';
-import { Header } from '../index';
+import {render} from '@testing-library/react-native';
+import {Header} from '../index';
 
 jest.mock('react-native-linear-gradient', () => 'LinearGradient');
 
@@ -8,8 +8,8 @@ describe('Header component', () => {
   it('renders correctly without title, logo, and icon', () => {
     const handleBackPressMock = jest.fn();
 
-    const { getByTestId } = render(
-      <Header showGradient={false} handleBackPress={handleBackPressMock} />
+    const {getByTestId} = render(
+      <Header showGradient={false} handleBackPress={handleBackPressMock} />,
     );
 
     const smallSquare = getByTestId('smallSquare');
@@ -17,12 +17,12 @@ describe('Header component', () => {
   });
 
   it('renders correctly with title and logo', () => {
-    const { getByText, getByTestId } = render(
+    const {getByText, getByTestId} = render(
       <Header
         showGradient={true}
-        logo={{ uri: 'logo-uri' }}
+        logo={{uri: 'logo-uri'}}
         headertitle="Header Title"
-      />
+      />,
     );
 
     const gradientOverlay = getByTestId('gradientOverlay');
@@ -33,14 +33,14 @@ describe('Header component', () => {
     expect(title).toBeTruthy();
   });
   it('renders correctly with header image and text', () => {
-    const { getByText, getByTestId } = render(
+    const {getByText, getByTestId} = render(
       <Header
         showGradient={false}
         headertitle="Header Title"
-        headerimage={{ uri: 'image-uri' }}
-      />
+        headerimage={{uri: 'image-uri'}}
+      />,
     );
-  
+
     const smallSquare = getByTestId('smallSquare');
     const title = getByText('Header Title');
     const headerImage = getByTestId('headerImage');
@@ -48,5 +48,4 @@ describe('Header component', () => {
     expect(title).toBeTruthy();
     expect(headerImage).toBeTruthy();
   });
-  
 });

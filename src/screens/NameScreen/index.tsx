@@ -9,8 +9,11 @@ import {Date} from '../../constants/navigation';
 import {KeleyaContext} from '../../context/KeleyaContext';
 import {AppStackParamList} from '../../Types/Types';
 import {validName} from '../../constants/utils';
-import { ButtonInvalidStyles, ButtonValidStyles } from '../../components/Button/style';
-import { useTranslation } from 'react-i18next';
+import {
+  ButtonInvalidStyles,
+  ButtonValidStyles,
+} from '../../components/Button/style';
+import {useTranslation} from 'react-i18next';
 
 const NameScreen = () => {
   const navigation = useNavigation<StackNavigationProp<AppStackParamList>>();
@@ -19,7 +22,7 @@ const NameScreen = () => {
   if (!keleyaContext) {
     return null;
   }
-  const { t } = useTranslation(); 
+  const {t} = useTranslation();
   const {name, setUsername} = keleyaContext;
   const isFormValid = validName(name);
 

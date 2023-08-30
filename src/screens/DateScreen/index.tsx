@@ -1,18 +1,17 @@
-import React, { useContext, useState } from 'react';
+import React, {useContext, useState} from 'react';
 import DatePicker from 'react-native-date-picker';
 import Button from '../../components/Button';
 import images from '../../constants/images';
-import { DateButtonsStyles } from './style';
+import {DateButtonsStyles} from './style';
 import Form from '../../components/Form';
-import { useNavigation } from '@react-navigation/native';
-import { StackNavigationProp } from '@react-navigation/stack';
-import { Workout } from '../../constants/navigation';
-import { KeleyaContext } from '../../context/KeleyaContext';
-import { formattedDate } from '../../constants/utils';
-import { AppStackParamList } from '../../Types/Types';
-import { ButtonValidStyles } from '../../components/Button/style';
-import { useTranslation } from 'react-i18next';
-import * as RNLocalize from 'react-native-localize'; 
+import {useNavigation} from '@react-navigation/native';
+import {StackNavigationProp} from '@react-navigation/stack';
+import {Workout} from '../../constants/navigation';
+import {KeleyaContext} from '../../context/KeleyaContext';
+import {formattedDate} from '../../constants/utils';
+import {AppStackParamList} from '../../Types/Types';
+import {ButtonValidStyles} from '../../components/Button/style';
+import {useTranslation} from 'react-i18next';
 
 const DateScreen = () => {
   const [date, setDate] = useState(new Date());
@@ -24,7 +23,7 @@ const DateScreen = () => {
   if (!keleyaContext) {
     return null;
   }
-  const { setSelectedDate, name } = keleyaContext;
+  const {setSelectedDate, name} = keleyaContext;
   const maxDueDate = new Date();
   maxDueDate.setMonth(maxDueDate.getMonth() + 9);
   maxDueDate.setDate(maxDueDate.getDate() + 7);
@@ -33,10 +32,7 @@ const DateScreen = () => {
     navigation.navigate(Workout);
   };
 
-  const { t } = useTranslation(); 
-  const userLanguage = RNLocalize.getLocales()[0].languageCode;
-
-
+  const {t} = useTranslation();
 
   return (
     <Form
@@ -44,7 +40,7 @@ const DateScreen = () => {
       onOriginalButtonPress={handleSucces}
       OriginalButtonStyles={ButtonValidStyles}
       headerimage={images.date}
-      title={t('WhenIsYourBabyDue', { name })}
+      title={t('WhenIsYourBabyDue', {name})}
       render={() => (
         <>
           <Button

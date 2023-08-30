@@ -28,21 +28,25 @@ export const Header = ({
     <View style={styles.header}>
       {showGradient && (
         <LinearGradient
-        testID='gradientOverlay'
+          testID="gradientOverlay"
           colors={[Colors.WHITE_TRANSPARENT, Colors.WHITE]}
           style={[styles.gradientOverlay, {height: '5%'}]}
         />
       )}
       {!icon && !logo && (
-        <TouchableOpacity testID="smallSquare" style={styles.smallSquare} onPress={handleBackPress}>
+        <TouchableOpacity
+          testID="smallSquare"
+          style={styles.smallSquare}
+          onPress={handleBackPress}>
           <Icon name={'arrow-left'} size={24} color="black" />
         </TouchableOpacity>
       )}
 
       {headertitle && (
         <View
-        testID={logo || icon ? 'headerLogoTitleContainer' : 'headerTitleContainer'}
-
+          testID={
+            logo || icon ? 'headerLogoTitleContainer' : 'headerTitleContainer'
+          }
           style={
             logo || icon
               ? styles.headerlogoTitleContainer
@@ -51,13 +55,20 @@ export const Header = ({
           <View style={styles.logoContainer}>
             {logo && (
               <ImageComponent
-                testID='logo'
+                testID="logo"
                 source={logo}
                 style={styles.logo}
                 resizeMode={'center'}
               />
             )}
-            {icon && <EvilIcons    testID='icon' name={icon} style={styles.icon} size={70} />}
+            {icon && (
+              <EvilIcons
+                testID="icon"
+                name={icon}
+                style={styles.icon}
+                size={70}
+              />
+            )}
 
             <Text
               style={

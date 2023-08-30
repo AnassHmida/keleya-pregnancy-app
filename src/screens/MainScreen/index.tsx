@@ -1,21 +1,21 @@
 import React from 'react';
-import { ImageBackground } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import { StackNavigationProp } from '@react-navigation/stack';
-import { SignIn, SignUp } from '../../constants/navigation';
+import {ImageBackground} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
+import {StackNavigationProp} from '@react-navigation/stack';
+import {SignIn, SignUp} from '../../constants/navigation';
 import images from '../../constants/images';
-import { styles } from './style';
-import { AppStackParamList } from '../../Types/Types';
+import {styles} from './style';
+import {AppStackParamList} from '../../Types/Types';
 import Form from '../../components/Form';
 import {
   LoginButtonsStyles,
   NobackgroundButtonStyles,
 } from '../../components/Button/style';
-import { useTranslation } from 'react-i18next';
+import {useTranslation} from 'react-i18next';
 
 const MainScreen = () => {
   const navigation = useNavigation<StackNavigationProp<AppStackParamList>>();
-  const { t } = useTranslation(); 
+  const {t} = useTranslation();
 
   return (
     <ImageBackground
@@ -24,11 +24,11 @@ const MainScreen = () => {
       resizeMode={'cover'}>
       <Form
         logo={images.logo}
-        headertitle={t('ForAFitAndRelaxedPregnancy')} 
+        headertitle={t('ForAFitAndRelaxedPregnancy')}
         AdditionalButtonStyles={LoginButtonsStyles}
         AdditionalButtonText={t('GetStartedButton')}
         onAdditionalButtonPress={() => navigation.navigate(SignUp)}
-        OriginalButtonText={t('OrLoginButton')} 
+        OriginalButtonText={t('OrLoginButton')}
         onOriginalButtonPress={() => {
           navigation.navigate(SignIn);
         }}

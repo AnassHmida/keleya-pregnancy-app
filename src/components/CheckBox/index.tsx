@@ -17,7 +17,10 @@ const Checkbox = ({labelSegments, checked, onPress, style}: CheckboxProps) => (
     activeOpacity={1}
     style={styles.container}
     onPress={onPress}>
-    <View testID="checkbox" style={[style.checkboxstyle, checked && style.checkedboxstyle]} />
+    <View
+      testID="checkbox"
+      style={[style.checkboxstyle, checked && style.checkedboxstyle]}
+    />
     <Text>
       {labelSegments.map((segment, index) => (
         <Text key={index} style={segment.bold ? styles.boldText : null}>

@@ -1,20 +1,20 @@
-import React, { useContext, useState } from 'react';
+import React, {useContext, useState} from 'react';
 import InputField from '../../components/InputField';
 import Checkbox from '../../components/CheckBox';
 import images from '../../constants/images';
 import Form from '../../components/Form';
-import { Name } from '../../constants/navigation';
-import { useNavigation } from '@react-navigation/native';
-import { StackNavigationProp } from '@react-navigation/stack';
-import { isEmailValid } from '../../constants/utils';
-import { AppStackParamList } from '../../Types/Types';
-import { KeleyaContext } from '../../context/KeleyaContext';
+import {Name} from '../../constants/navigation';
+import {useNavigation} from '@react-navigation/native';
+import {StackNavigationProp} from '@react-navigation/stack';
+import {isEmailValid} from '../../constants/utils';
+import {AppStackParamList} from '../../Types/Types';
+import {KeleyaContext} from '../../context/KeleyaContext';
 import {
   ButtonInvalidStyles,
   ButtonValidStyles,
 } from '../../components/Button/style';
-import { checkBoxStyle } from '../../components/CheckBox/style';
-import { useTranslation } from 'react-i18next';
+import {checkBoxStyle} from '../../components/CheckBox/style';
+import {useTranslation} from 'react-i18next';
 
 const SignUpScreen = () => {
   const [email, setMail] = useState('');
@@ -27,10 +27,13 @@ const SignUpScreen = () => {
   if (!keleyaContext) {
     return null;
   }
-const { t } = useTranslation();
-  const { setEmail } = keleyaContext;
+  const {t} = useTranslation();
+  const {setEmail} = keleyaContext;
   const isFormValid =
-    isEmailValid(email) && password.length > 0 && agreedToPolicy && agreedToTerms;
+    isEmailValid(email) &&
+    password.length > 0 &&
+    agreedToPolicy &&
+    agreedToTerms;
 
   const handleSignUp = () => {
     if (isFormValid) {
@@ -41,34 +44,32 @@ const { t } = useTranslation();
     }
   };
 
-
-
   return (
     <Form
-      OriginalButtonText={t('LoginButton')} 
+      OriginalButtonText={t('LoginButton')}
       onOriginalButtonPress={handleSignUp}
       OriginalButtonStyles={
         isFormValid ? ButtonValidStyles : ButtonInvalidStyles
       }
       headerimage={images.authentication_background}
-      title={t('AddYourDetailsTitle')} 
+      title={t('AddYourDetailsTitle')}
       render={() => (
         <>
           <InputField
-            placeholder={t('ExampleEmailPlaceholder')} 
+            placeholder={t('ExampleEmailPlaceholder')}
             value={email}
             onChangeText={setMail}
           />
           <InputField
-            placeholder={t('EnterPasswordPlaceholder')} 
+            placeholder={t('EnterPasswordPlaceholder')}
             secureTextEntry
             value={password}
             onChangeText={setPassword}
           />
           <Checkbox
             labelSegments={[
-              { text: t('IveReadThe') }, 
-              { text: t('PrivacyPolicy'), bold: true }, 
+              {text: t('IveReadThe')},
+              {text: t('PrivacyPolicy'), bold: true},
             ]}
             checked={agreedToPolicy}
             onPress={() => setAgreedToPolicy(!agreedToPolicy)}
@@ -77,10 +78,10 @@ const { t } = useTranslation();
 
           <Checkbox
             labelSegments={[
-              { text: t('IAcceptThe') }, 
-              { text: t('TermsAndConditions'), bold: true }, 
-              { text: t('And') }, 
-              { text: t('KeleyasAdvice'), bold: true },
+              {text: t('IAcceptThe')},
+              {text: t('TermsAndConditions'), bold: true},
+              {text: t('And')},
+              {text: t('KeleyasAdvice'), bold: true},
             ]}
             checked={agreedToTerms}
             onPress={() => setAgreedToTerms(!agreedToTerms)}
