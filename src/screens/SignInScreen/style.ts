@@ -18,23 +18,7 @@ export const checkBoxStyle = StyleSheet.create({
   },
 });
 
-export const SignUpButtonStyles = StyleSheet.create({
-  containerstyle: {
-    position: 'absolute',
-    bottom: 0,
-    marginBottom: 20,
-    paddingVertical: 15,
-    width: '90%',
-    borderRadius: 10,
-    backgroundColor: Colors.LIGHT_TEAL,
-  },
 
-  textstyle: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: Colors.WHITE,
-  },
-});
 
 export const styles = StyleSheet.create({
   container: {

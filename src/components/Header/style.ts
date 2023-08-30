@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import Colors from '../../constants/colors';
 
 export const styles = StyleSheet.create({
   header: {
@@ -12,7 +13,19 @@ export const styles = StyleSheet.create({
     marginLeft: 30,
     marginTop: 50,
   },
-
+  logoText: {
+    marginTop: 5,
+    width: '70%',
+    fontFamily: 'MuseoSansRounded-500',
+    textAlign: 'center',
+    fontSize: 20,
+    color: Colors.GREYISH_BROWN,
+  },
+  headerlogoTitleContainer: {
+    alignSelf: 'center',
+    zIndex: 2,
+    position: 'absolute',
+  },
   headerTitleContainer: {
     alignSelf: 'center',
     zIndex: 2,
@@ -45,5 +58,31 @@ export const styles = StyleSheet.create({
     fontWeight: 'normal',
     textAlign: 'center',
     marginBottom: 15,
+  },
+  backgroundImage: {
+    flex: 1,
+    resizeMode: 'cover',
+  },
+  container: {
+    flex: 1,
+    position: 'relative',
+  },
+  logoContainer: {
+    marginTop: 60,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  logo: {
+    width: 100,
+    height: 100,
+  },
+  
+  buttonContainer: {
+    position: 'absolute',
+    bottom: 0,
+    left: 20,
+    right: 20,
+    paddingHorizontal: 20,
+    marginBottom: 25,
   },
 });

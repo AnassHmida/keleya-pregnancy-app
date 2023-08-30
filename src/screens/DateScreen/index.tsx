@@ -10,6 +10,7 @@ import {Workout} from '../../constants/navigation';
 import {KeleyaContext} from '../../context/KeleyaContext';
 import {formattedDate} from '../../constants/utils';
 import {AppStackParamList} from '../../Types/Types';
+import { SubmitButtonValidStyles } from '../../components/Form/style';
 
 const DateScreen = () => {
   const [date, setDate] = useState(new Date());
@@ -32,9 +33,9 @@ const DateScreen = () => {
 
   return (
     <Form
-      submittitle="Continue"
-      onSubmit={handleSucces}
-      isFormValid={true}
+      OriginalButtonText="Continue"
+      onOriginalButtonPress={handleSucces}
+      OriginalButtonStyles={SubmitButtonValidStyles}
       headerimage={images.date}
       title={`When is your baby due, ${name}?`}
       render={() => (

@@ -1,45 +1,40 @@
 import React from 'react';
-import {View, Text, ImageBackground} from 'react-native';
+import { View, Text, ImageBackground } from 'react-native';
 import ImageComponent from '../../components/Image';
 import Button from '../../components/Button';
-import {useNavigation} from '@react-navigation/native';
-import {StackNavigationProp} from '@react-navigation/stack';
-import {SignIn, SignUp} from '../../constants/navigation';
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { SignIn, SignUp } from '../../constants/navigation';
 import images from '../../constants/images';
-import {styles, LoginButtonsStyles, SignUpButtonStyles} from './style';
-import {AppStackParamList} from '../../Types/Types';
+import { styles } from './style';
+import { AppStackParamList } from '../../Types/Types';
+import { Header } from '../../components/Header';
+import ButtonGroup from '../../components/ButtonGroup';
+import Form from '../../components/Form';
+import { LoginButtonsStyles, NobackgroundButtonStyles } from '../../components/Button/style';
 
 const MainScreen = () => {
   const navigation = useNavigation<StackNavigationProp<AppStackParamList>>();
   return (
+
     <ImageBackground
       source={images.introImage}
       style={styles.backgroundImage}
       resizeMode={'cover'}>
-      <View style={styles.container}>
-        <View style={styles.logoContainer}>
-          <ImageComponent
-            source={images.logo}
-            style={styles.logo}
-            resizeMode={'center'}
-          />
-          <Text style={styles.logoText}>For a fit and relaxed pregnancy</Text>
-        </View>
-        <View style={styles.buttonContainer}>
-          <Button
-            text="Get Started"
-            onPress={() => {
-              navigation.navigate(SignUp);
-            }}
-            style={LoginButtonsStyles}
-          />
-          <Button
-            text="Or login"
-            onPress={() => navigation.navigate(SignIn)}
-            style={SignUpButtonStyles}
-          />
-        </View>
-      </View>
+
+      <Form
+        logo={images.logo}
+        headertitle={'For a fit and relaxed pregnancy'}
+        AdditionalButtonStyles={LoginButtonsStyles}
+        AdditionalButtonText='Get Started'
+        onAdditionalButtonPress={() => navigation.navigate(SignUp)}
+        OriginalButtonText="Or login"
+        onOriginalButtonPress={() => {
+          navigation.navigate(SignIn);
+        }}
+        OriginalButtonStyles={NobackgroundButtonStyles}
+      />
+
     </ImageBackground>
   );
 };

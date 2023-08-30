@@ -1,36 +1,45 @@
-// ButtonGroupComponent.tsx
 import React from 'react';
-import {TouchableOpacity, Text, View} from 'react-native';
+import { TouchableOpacity, Text, View, StyleProp, ViewStyle, TextStyle } from 'react-native';
 import Button from '../Button';
-import {
-  SubmitButtonInvalidStyles,
-  SubmitButtonValidStyles,
-  styles,
-} from './style';
+import { styles } from './style';
 
 type ButtonGroupProps = {
   bottomText?: string;
-  submittitle: string;
-  onSubmit: () => void;
+  originalbuttontitle: string;
+  additionalbuttontitle?: string;
   isFormValid?: boolean;
+  additionalButtonStyles?: {
+    containerstyle: StyleProp<ViewStyle>;
+    textstyle?: StyleProp<TextStyle>;
+  };
+  originalButtonStyles: {
+    containerstyle: StyleProp<ViewStyle>;
+    textstyle?: StyleProp<TextStyle>;
+  };
+  onOriginalButtonPress: () => void;
+  onAdditionalButtonPress?: () => void;
 };
 
 const ButtonGroup = ({
-  bottomText,
-  submittitle,
-  onSubmit,
-  isFormValid,
+  additionalbuttontitle,
+  originalbuttontitle,
+  onOriginalButtonPress,
+  additionalButtonStyles,
+  originalButtonStyles,
+  onAdditionalButtonPress,
 }: ButtonGroupProps) => (
-  <View style={styles.bottomContainer}>
-    {bottomText && (
-      <TouchableOpacity>
-        <Text style={styles.bottomText}>{bottomText}</Text>
-      </TouchableOpacity>
+    <View style={styles.bottomContainer}>
+    {additionalbuttontitle && additionalButtonStyles && onAdditionalButtonPress && (
+      <Button
+        text={additionalbuttontitle}
+        onPress={onAdditionalButtonPress}
+        style={additionalButtonStyles}
+      />
     )}
     <Button
-      text={submittitle}
-      onPress={onSubmit}
-      style={isFormValid ? SubmitButtonValidStyles : SubmitButtonInvalidStyles}
+      text={originalbuttontitle}
+      onPress={onOriginalButtonPress}
+      style={originalButtonStyles}
     />
   </View>
 );

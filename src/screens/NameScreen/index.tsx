@@ -9,6 +9,7 @@ import {Date} from '../../constants/navigation';
 import {KeleyaContext} from '../../context/KeleyaContext';
 import {AppStackParamList} from '../../Types/Types';
 import {validName} from '../../constants/utils';
+import { SubmitButtonInvalidStyles, SubmitButtonValidStyles } from '../../components/Form/style';
 
 const NameScreen = () => {
   const navigation = useNavigation<StackNavigationProp<AppStackParamList>>();
@@ -23,12 +24,12 @@ const NameScreen = () => {
   return (
     <>
       <Form
-        isFormValid={isFormValid}
-        submittitle="Continue"
-        showGradient
-        onSubmit={() => {
+        OriginalButtonText="Continue"
+        onOriginalButtonPress={() => {
           isFormValid && navigation.navigate(Date);
         }}
+        OriginalButtonStyles={isFormValid ? SubmitButtonValidStyles : SubmitButtonInvalidStyles}
+        showGradient
         headerimage={images.name}
         title="It's great that you're here! First things first, what should we
         call you?"
