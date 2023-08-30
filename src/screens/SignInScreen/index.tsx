@@ -9,6 +9,7 @@ import {isEmailValid} from '../../constants/utils';
 import {AppStackParamList} from '../../Types/Types';
 import {KeleyaContext} from '../../context/KeleyaContext';
 import {ButtonInvalidStyles, ButtonValidStyles, NobackgroundButtonStyles} from '../../components/Button/style';
+import strings from '../../constants/strings';
 
 const SignInScreen = () => {
   const [email, setMail] = useState('');
@@ -16,7 +17,7 @@ const SignInScreen = () => {
   const navigation = useNavigation<StackNavigationProp<AppStackParamList>>();
   const isFormValid = isEmailValid(email) && password.length > 0;
   const keleyaContext = useContext(KeleyaContext);
-
+  const { HaveYouForgottenYourPassword , LoginButton, WelcomeBack , ExampleEmailPlaceholder , EnterPasswordPlaceholder} = strings
   if (!keleyaContext) {
     return null;
   }
@@ -36,25 +37,25 @@ const SignInScreen = () => {
     <>
       <Form
         AdditionalButtonStyles={NobackgroundButtonStyles}
-        AdditionalButtonText="Have you forgotten your password ? "
+        AdditionalButtonText={HaveYouForgottenYourPassword}
         onAdditionalButtonPress={() => {}}
-        OriginalButtonText="Log in"
+        OriginalButtonText={LoginButton}
         onOriginalButtonPress={handleSignIn}
         OriginalButtonStyles={
           isFormValid ? ButtonValidStyles : ButtonInvalidStyles
         }
-        bottomText={'Have your forgotten your password ? '}
+        bottomText={HaveYouForgottenYourPassword}
         headerimage={images.authentication_background}
-        title="Welcome back!"
+        title={WelcomeBack}
         render={() => (
           <>
             <InputField
-              placeholder="example@gmail.com"
+              placeholder={ExampleEmailPlaceholder}
               value={email}
               onChangeText={setMail}
             />
             <InputField
-              placeholder="Enter a password"
+              placeholder={EnterPasswordPlaceholder}
               secureTextEntry
               value={password}
               onChangeText={setPassword}

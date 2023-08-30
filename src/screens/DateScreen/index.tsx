@@ -11,6 +11,7 @@ import {KeleyaContext} from '../../context/KeleyaContext';
 import {formattedDate} from '../../constants/utils';
 import {AppStackParamList} from '../../Types/Types';
 import { ButtonValidStyles } from '../../components/Button/style';
+import strings from '../../constants/strings';
 
 
 const DateScreen = () => {
@@ -32,13 +33,15 @@ const DateScreen = () => {
     navigation.navigate(Workout);
   };
 
+  const {WhenIsYourBabyDue,ContinueButton} = strings
+
   return (
     <Form
-      OriginalButtonText="Continue"
+      OriginalButtonText={ContinueButton}
       onOriginalButtonPress={handleSucces}
       OriginalButtonStyles={ButtonValidStyles}
       headerimage={images.date}
-      title={`When is your baby due, ${name}?`}
+      title={WhenIsYourBabyDue.replace('%{name}', name)}
       render={() => (
         <>
           <Button

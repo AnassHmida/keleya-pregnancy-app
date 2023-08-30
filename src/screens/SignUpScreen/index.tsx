@@ -11,6 +11,7 @@ import {AppStackParamList} from '../../Types/Types';
 import {KeleyaContext} from '../../context/KeleyaContext';
 import { ButtonInvalidStyles, ButtonValidStyles } from '../../components/Button/style';
 import { checkBoxStyle } from '../../components/CheckBox/style';
+import strings from '../../constants/strings';
 
 const SignUpScreen = () => {
   const [email, setMail] = useState('');
@@ -19,7 +20,8 @@ const SignUpScreen = () => {
   const [agreedToTerms, setagreedToTerms] = useState(false);
   const navigation = useNavigation<StackNavigationProp<AppStackParamList>>();
   const keleyaContext = useContext(KeleyaContext);
-
+  const { LoginButton ,And, AddYourDetailsTitle  ,IAcceptThe, KeleyasAdvice,TermsAndConditions, PrivacyPolicy,ExampleEmailPlaceholder , IveReadThe, EnterPasswordPlaceholder} = strings
+  
   if (!keleyaContext) {
     return null;
   }
@@ -41,30 +43,30 @@ const SignUpScreen = () => {
 
   return (
     <Form
-      OriginalButtonText="Log in"
+      OriginalButtonText={LoginButton}
       onOriginalButtonPress={handleSignUp}
       OriginalButtonStyles={
         isFormValid ? ButtonValidStyles : ButtonInvalidStyles
       }
       headerimage={images.authentication_background}
-      title="Add your details below to set up an account"
+      title={AddYourDetailsTitle}
       render={() => (
         <>
           <InputField
-            placeholder="example@gmail.com"
+            placeholder={ExampleEmailPlaceholder}
             value={email}
             onChangeText={setMail}
           />
           <InputField
-            placeholder="Enter a password"
+            placeholder={EnterPasswordPlaceholder}
             secureTextEntry
             value={password}
             onChangeText={setPassword}
           />
           <Checkbox
             labelSegments={[
-              {text: "I've read the "},
-              {text: 'privacy policy', bold: true},
+              {text: IveReadThe},
+              {text: PrivacyPolicy, bold: true},
             ]}
             checked={agreedToPolicy}
             onPress={() => setAgreedToPolicy(!agreedToPolicy)}
@@ -73,10 +75,10 @@ const SignUpScreen = () => {
 
           <Checkbox
             labelSegments={[
-              {text: 'I accept '},
-              {text: 'the terms & conditions', bold: true},
-              {text: ' and '},
-              {text: "Keleya's advice", bold: true},
+              {text: IAcceptThe},
+              {text: TermsAndConditions, bold: true},
+              {text: And},
+              {text: KeleyasAdvice, bold: true},
             ]}
             checked={agreedToTerms}
             onPress={() => setagreedToTerms(!agreedToTerms)}

@@ -11,7 +11,8 @@ import {
   LoginButtonsStyles,
   NobackgroundButtonStyles,
 } from '../../components/Button/style';
-
+import strings from '../../constants/strings';
+const { ForAFitAndRelaxedPregnancy,GetStartedButton,OrLoginButton } = strings
 const MainScreen = () => {
   const navigation = useNavigation<StackNavigationProp<AppStackParamList>>();
   return (
@@ -21,11 +22,11 @@ const MainScreen = () => {
       resizeMode={'cover'}>
       <Form
         logo={images.logo}
-        headertitle={'For a fit and relaxed pregnancy'}
+        headertitle={ForAFitAndRelaxedPregnancy}
         AdditionalButtonStyles={LoginButtonsStyles}
-        AdditionalButtonText="Get Started"
+        AdditionalButtonText={GetStartedButton}
         onAdditionalButtonPress={() => navigation.navigate(SignUp)}
-        OriginalButtonText="Or login"
+        OriginalButtonText={OrLoginButton}
         onOriginalButtonPress={() => {
           navigation.navigate(SignIn);
         }}

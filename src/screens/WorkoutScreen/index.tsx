@@ -9,6 +9,7 @@ import {styles} from './style';
 import {AppStackParamList} from '../../Types/Types';
 import {KeleyaContext} from '../../context/KeleyaContext';
 import { ButtonValidStyles } from '../../components/Button/style';
+import strings from '../../constants/strings';
 
 const WorkoutScreen = () => {
   const keleyaContext = useContext(KeleyaContext);
@@ -26,22 +27,32 @@ const WorkoutScreen = () => {
     await setWorkoutOption(selectedWorkout);
     navigation.navigate(Success);
   };
+  const { OnceAWeek,
+  TwoTimesAWeek,
+  ThreeTimesAWeek,
+  FourTimesAWeek,
+  FiveTimesAWeek,
+  SixTimesAWeek,
+  SevenTimesAWeek,
+  ContinueButton,
+  HowManyTimesAWeek
+} = strings
   const frequencyOptions = [
-    'Once a week',
-    '2 times a week',
-    '3 times a week',
-    '4 times a week',
-    '5 times a week',
-    '6 times a week',
-    '7 times a week',
+    OnceAWeek,
+    TwoTimesAWeek,
+    ThreeTimesAWeek,
+    FourTimesAWeek,
+    FiveTimesAWeek,
+    SixTimesAWeek,
+    SevenTimesAWeek,
   ];
 
   return (
     <Form
-      OriginalButtonText="Continue"
+      OriginalButtonText={ContinueButton}
       onOriginalButtonPress={handleSucces}
       OriginalButtonStyles={ButtonValidStyles}
-      headertitle={'How many times a week do you want to be active ? '}
+      headertitle={HowManyTimesAWeek}
       headerimage={images.workout}
       render={() => (
         <Picker

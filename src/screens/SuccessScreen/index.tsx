@@ -6,7 +6,8 @@ import {styles} from './style';
 import {KeleyaContext} from '../../context/KeleyaContext';
 import Form from '../../components/Form';
 import {LoginButtonsStyles, NobackgroundButtonStyles} from '../../components/Button/style';
-
+import strings from '../../constants/strings';
+const { GetNotificationsTitle , SkipButton , AllowNotificationsButton } = strings
 const SuccessScreen = () => {
   const keleyaContext = useContext(KeleyaContext);
 
@@ -30,11 +31,11 @@ const SuccessScreen = () => {
       resizeMode={'cover'}>
       <Form
         icon={'bell'}
-        headertitle={'Get notifications to boost your motivation'}
+        headertitle={GetNotificationsTitle}
         AdditionalButtonStyles={NobackgroundButtonStyles}
-        AdditionalButtonText="Skip"
+        AdditionalButtonText={SkipButton}
         onAdditionalButtonPress={() => {}}
-        OriginalButtonText="Allow notifications"
+        OriginalButtonText={AllowNotificationsButton}
         onOriginalButtonPress={() => {}}
         OriginalButtonStyles={LoginButtonsStyles}
       />

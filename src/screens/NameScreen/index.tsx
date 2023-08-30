@@ -10,6 +10,7 @@ import {KeleyaContext} from '../../context/KeleyaContext';
 import {AppStackParamList} from '../../Types/Types';
 import {validName} from '../../constants/utils';
 import { ButtonInvalidStyles, ButtonValidStyles } from '../../components/Button/style';
+import strings from '../../constants/strings';
 
 const NameScreen = () => {
   const navigation = useNavigation<StackNavigationProp<AppStackParamList>>();
@@ -20,11 +21,12 @@ const NameScreen = () => {
   }
   const {name, setUsername} = keleyaContext;
   const isFormValid = validName(name);
+  const { ItsGreatThatYoureHere , YourNamePlaceholder , ContinueButton} = strings
 
   return (
     <>
       <Form
-        OriginalButtonText="Continue"
+        OriginalButtonText={ContinueButton}
         onOriginalButtonPress={() => {
           isFormValid && navigation.navigate(Date);
         }}
@@ -33,12 +35,11 @@ const NameScreen = () => {
         }
         showGradient
         headerimage={images.name}
-        title="It's great that you're here! First things first, what should we
-        call you?"
+        title={ItsGreatThatYoureHere}
         render={() => (
           <>
             <InputField
-              placeholder="Your Name"
+              placeholder={YourNamePlaceholder}
               value={name}
               onChangeText={setUsername}
               style={InputStyle}

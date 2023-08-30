@@ -30,7 +30,6 @@ export const styles = StyleSheet.create({
     alignSelf: 'center',
     zIndex: 2,
     width: '100%',
-    top: '20%',
     padding: 20,
     position: 'absolute',
   },
