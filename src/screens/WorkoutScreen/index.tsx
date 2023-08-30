@@ -1,14 +1,14 @@
-import React, { useContext, useState } from 'react';
-import { Picker } from 'react-native-wheel-pick';
+import React, {useContext, useState} from 'react';
+import {Picker} from 'react-native-wheel-pick';
 import images from '../../constants/images';
 import Form from '../../components/Form';
-import { useNavigation } from '@react-navigation/native';
-import { StackNavigationProp } from '@react-navigation/stack';
-import { Success } from '../../constants/navigation';
-import { styles } from './style';
-import { AppStackParamList } from '../../Types/Types';
-import { KeleyaContext } from '../../context/KeleyaContext';
-import { SubmitButtonValidStyles } from '../../components/Form/style';
+import {useNavigation} from '@react-navigation/native';
+import {StackNavigationProp} from '@react-navigation/stack';
+import {Success} from '../../constants/navigation';
+import {styles} from './style';
+import {AppStackParamList} from '../../Types/Types';
+import {KeleyaContext} from '../../context/KeleyaContext';
+import {SubmitButtonValidStyles} from '../../components/Form/style';
 
 const WorkoutScreen = () => {
   const keleyaContext = useContext(KeleyaContext);
@@ -19,7 +19,7 @@ const WorkoutScreen = () => {
     return null;
   }
 
-  const { setAuthentication, setWorkoutOption } = keleyaContext;
+  const {setAuthentication, setWorkoutOption} = keleyaContext;
 
   const handleSucces = async () => {
     await setAuthentication(true);

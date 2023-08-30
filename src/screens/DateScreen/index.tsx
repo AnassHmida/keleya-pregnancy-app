@@ -10,7 +10,7 @@ import {Workout} from '../../constants/navigation';
 import {KeleyaContext} from '../../context/KeleyaContext';
 import {formattedDate} from '../../constants/utils';
 import {AppStackParamList} from '../../Types/Types';
-import { SubmitButtonValidStyles } from '../../components/Form/style';
+import {SubmitButtonValidStyles} from '../../components/Form/style';
 
 const DateScreen = () => {
   const [date, setDate] = useState(new Date());

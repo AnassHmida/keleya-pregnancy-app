@@ -18,8 +18,6 @@ export const checkBoxStyle = StyleSheet.create({
   },
 });
 
-
-
 export const styles = StyleSheet.create({
   container: {
     flex: 1,

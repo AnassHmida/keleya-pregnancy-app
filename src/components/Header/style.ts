@@ -76,7 +76,11 @@ export const styles = StyleSheet.create({
     width: 100,
     height: 100,
   },
-  
+  icon: {
+    height: 80,
+    alignItems: 'center',
+  },
+
   buttonContainer: {
     position: 'absolute',
     bottom: 0,

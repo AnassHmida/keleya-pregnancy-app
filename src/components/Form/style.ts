@@ -6,14 +6,13 @@ export const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor:Colors.WHITE
+    backgroundColor: Colors.WHITE,
   },
   backgroundImage: {
     flex: 1,
     resizeMode: 'cover',
   },
 });
-
 
 export const SubmitButtonValidStyles = StyleSheet.create({
   containerstyle: {

@@ -1,7 +1,7 @@
 import React from 'react';
-import { TouchableOpacity, Text, View, StyleProp, ViewStyle, TextStyle } from 'react-native';
+import {View, StyleProp, ViewStyle, TextStyle} from 'react-native';
 import Button from '../Button';
-import { styles } from './style';
+import {styles} from './style';
 
 type ButtonGroupProps = {
   bottomText?: string;
@@ -28,14 +28,16 @@ const ButtonGroup = ({
   originalButtonStyles,
   onAdditionalButtonPress,
 }: ButtonGroupProps) => (
-    <View style={styles.bottomContainer}>
-    {additionalbuttontitle && additionalButtonStyles && onAdditionalButtonPress && (
-      <Button
-        text={additionalbuttontitle}
-        onPress={onAdditionalButtonPress}
-        style={additionalButtonStyles}
-      />
-    )}
+  <View style={styles.bottomContainer}>
+    {additionalbuttontitle &&
+      additionalButtonStyles &&
+      onAdditionalButtonPress && (
+        <Button
+          text={additionalbuttontitle}
+          onPress={onAdditionalButtonPress}
+          style={additionalButtonStyles}
+        />
+      )}
     <Button
       text={originalbuttontitle}
       onPress={onOriginalButtonPress}

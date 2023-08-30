@@ -4,7 +4,7 @@ export const styles = StyleSheet.create({
   bottomContainer: {
     position: 'absolute',
     bottom: 0,
-    justifyContent:'center',
+    justifyContent: 'center',
     marginBottom: 20,
     width: '90%',
   },
@@ -15,4 +15,3 @@ export const styles = StyleSheet.create({
     fontFamily: 'MuseoSansRounded-500',
   },
 });
-

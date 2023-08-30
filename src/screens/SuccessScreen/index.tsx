@@ -1,10 +1,11 @@
 import React, {useContext} from 'react';
-import {View, Text, ImageBackground} from 'react-native';
-import Button from '../../components/Button';
-import Icon from 'react-native-vector-icons/EvilIcons';
+import {ImageBackground} from 'react-native';
+
 import images from '../../constants/images';
-import {styles, LoginButtonsStyles, SignUpButtonStyles} from './style';
+import {styles, LoginButtonsStyles} from './style';
 import {KeleyaContext} from '../../context/KeleyaContext';
+import Form from '../../components/Form';
+import {NobackgroundButtonStyles} from '../../components/Button/style';
 
 const SuccessScreen = () => {
   const keleyaContext = useContext(KeleyaContext);
@@ -27,22 +28,16 @@ const SuccessScreen = () => {
       source={images.success}
       style={styles.backgroundImage}
       resizeMode={'cover'}>
-      <View style={styles.container}>
-        <View style={styles.logoContainer}>
-          <Icon size={70} name="bell" style={styles.logo} />
-          <Text style={styles.logoText}>
-            Get notifications to boost your motivation
-          </Text>
-        </View>
-        <View style={styles.buttonContainer}>
-          <Button text="Skip" onPress={() => {}} style={SignUpButtonStyles} />
-          <Button
-            text="Allow notifications"
-            onPress={() => {}}
-            style={LoginButtonsStyles}
-          />
-        </View>
-      </View>
+      <Form
+        icon={'bell'}
+        headertitle={'Get notifications to boost your motivation'}
+        AdditionalButtonStyles={NobackgroundButtonStyles}
+        AdditionalButtonText="Skip"
+        onAdditionalButtonPress={() => {}}
+        OriginalButtonText="Allow notifications"
+        onOriginalButtonPress={() => {}}
+        OriginalButtonStyles={LoginButtonsStyles}
+      />
     </ImageBackground>
   );
 };
