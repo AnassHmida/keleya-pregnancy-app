@@ -28,7 +28,7 @@ export const Header = ({
     <View style={styles.header}>
       {showGradient && (
         <LinearGradient
-        testID='gradientOverlay'
+          testID='gradientOverlay'
           colors={[Colors.WHITE_TRANSPARENT, Colors.WHITE]}
           style={[styles.gradientOverlay, {height: '5%'}]}
         />

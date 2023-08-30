@@ -9,6 +9,7 @@ import {AppStackParamList} from '../../Types/Types';
 import Form from '../../components/Form';
 import {
   LoginButtonsStyles,
+  NobackgroundButtonBoldStyles,
   NobackgroundButtonStyles,
 } from '../../components/Button/style';
 import strings from '../../constants/strings';
@@ -30,7 +31,7 @@ const MainScreen = () => {
         onOriginalButtonPress={() => {
           navigation.navigate(SignIn);
         }}
-        OriginalButtonStyles={NobackgroundButtonStyles}
+        OriginalButtonStyles={NobackgroundButtonBoldStyles}
       />
     </ImageBackground>
   );

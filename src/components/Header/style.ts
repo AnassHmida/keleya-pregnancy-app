@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
     alignSelf: 'baseline',
   },
   smallSquare: {
-    zIndex: 2,
+    zIndex: 3,
     position: 'absolute',
     marginLeft: 30,
     marginTop: 50,
