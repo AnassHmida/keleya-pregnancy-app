@@ -10,9 +10,8 @@ import {Workout} from '../../constants/navigation';
 import {KeleyaContext} from '../../context/KeleyaContext';
 import {formattedDate} from '../../constants/utils';
 import {AppStackParamList} from '../../Types/Types';
-import { ButtonValidStyles } from '../../components/Button/style';
+import {ButtonValidStyles} from '../../components/Button/style';
 import strings from '../../constants/strings';
-
 
 const DateScreen = () => {
   const [date, setDate] = useState(new Date());
@@ -33,7 +32,7 @@ const DateScreen = () => {
     navigation.navigate(Workout);
   };
 
-  const {WhenIsYourBabyDue,ContinueButton} = strings
+  const {WhenIsYourBabyDue, ContinueButton} = strings;
 
   return (
     <Form

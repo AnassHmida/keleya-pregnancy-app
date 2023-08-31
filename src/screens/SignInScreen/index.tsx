@@ -8,7 +8,11 @@ import {Success} from '../../constants/navigation';
 import {isEmailValid} from '../../constants/utils';
 import {AppStackParamList} from '../../Types/Types';
 import {KeleyaContext} from '../../context/KeleyaContext';
-import {ButtonInvalidStyles, ButtonValidStyles, NobackgroundButtonStyles} from '../../components/Button/style';
+import {
+  ButtonInvalidStyles,
+  ButtonValidStyles,
+  NobackgroundButtonStyles,
+} from '../../components/Button/style';
 import strings from '../../constants/strings';
 
 const SignInScreen = () => {
@@ -17,7 +21,13 @@ const SignInScreen = () => {
   const navigation = useNavigation<StackNavigationProp<AppStackParamList>>();
   const isFormValid = isEmailValid(email) && password.length > 0;
   const keleyaContext = useContext(KeleyaContext);
-  const { HaveYouForgottenYourPassword , LoginButton, WelcomeBack , ExampleEmailPlaceholder , EnterPasswordPlaceholder} = strings
+  const {
+    HaveYouForgottenYourPassword,
+    LoginButton,
+    WelcomeBack,
+    ExampleEmailPlaceholder,
+    EnterPasswordPlaceholder,
+  } = strings;
   if (!keleyaContext) {
     return null;
   }

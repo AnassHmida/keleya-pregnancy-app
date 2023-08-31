@@ -9,7 +9,10 @@ import {Date} from '../../constants/navigation';
 import {KeleyaContext} from '../../context/KeleyaContext';
 import {AppStackParamList} from '../../Types/Types';
 import {validName} from '../../constants/utils';
-import { ButtonInvalidStyles, ButtonValidStyles } from '../../components/Button/style';
+import {
+  ButtonInvalidStyles,
+  ButtonValidStyles,
+} from '../../components/Button/style';
 import strings from '../../constants/strings';
 
 const NameScreen = () => {
@@ -21,7 +24,7 @@ const NameScreen = () => {
   }
   const {name, setUsername} = keleyaContext;
   const isFormValid = validName(name);
-  const { ItsGreatThatYoureHere , YourNamePlaceholder , ContinueButton} = strings
+  const {ItsGreatThatYoureHere, YourNamePlaceholder, ContinueButton} = strings;
 
   return (
     <>

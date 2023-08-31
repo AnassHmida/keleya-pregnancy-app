@@ -8,19 +8,16 @@ import {Success} from '../../constants/navigation';
 import {styles} from './style';
 import {AppStackParamList} from '../../Types/Types';
 import {KeleyaContext} from '../../context/KeleyaContext';
-import { ButtonValidStyles } from '../../components/Button/style';
+import {ButtonValidStyles} from '../../components/Button/style';
 import strings from '../../constants/strings';
 
 const WorkoutScreen = () => {
   const keleyaContext = useContext(KeleyaContext);
-  const { 
-    ContinueButton,
-    HowManyTimesAWeek,
-    WeeksPerDay
-  } = strings
-  
-  const defaultFrequency = WeeksPerDay[2]
-  const [selectedWorkout, setSelectedWorkout] = useState<string>(defaultFrequency);
+  const {ContinueButton, HowManyTimesAWeek, WeeksPerDay} = strings;
+
+  const defaultFrequency = WeeksPerDay[2];
+  const [selectedWorkout, setSelectedWorkout] =
+    useState<string>(defaultFrequency);
   const navigation = useNavigation<StackNavigationProp<AppStackParamList>>();
 
   if (!keleyaContext) {
@@ -31,12 +28,10 @@ const WorkoutScreen = () => {
 
   const handleSucces = async () => {
     setAuthentication(true);
-    console.log(selectedWorkout)
+    console.log(selectedWorkout);
     setWorkoutOption(selectedWorkout);
     navigation.navigate(Success);
   };
-  
-  
 
   return (
     <Form

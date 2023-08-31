@@ -24,7 +24,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: 20,
-    marginRight:10,
+    marginRight: 10,
   },
   boldText: {
     fontWeight: 'bold',

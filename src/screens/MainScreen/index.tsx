@@ -13,7 +13,7 @@ import {
   NobackgroundButtonStyles,
 } from '../../components/Button/style';
 import strings from '../../constants/strings';
-const { ForAFitAndRelaxedPregnancy,GetStartedButton,OrLoginButton } = strings
+const {ForAFitAndRelaxedPregnancy, GetStartedButton, OrLoginButton} = strings;
 const MainScreen = () => {
   const navigation = useNavigation<StackNavigationProp<AppStackParamList>>();
   return (

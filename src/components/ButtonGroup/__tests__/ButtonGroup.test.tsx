@@ -1,17 +1,17 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react-native';
+import {render, fireEvent} from '@testing-library/react-native';
 import ButtonGroup from '../index';
 
 describe('ButtonGroup component', () => {
   it('renders correctly with original button', () => {
     const onOriginalButtonPressMock = jest.fn();
 
-    const { getByText } = render(
+    const {getByText} = render(
       <ButtonGroup
         originalbuttontitle="Original Button"
         onOriginalButtonPress={onOriginalButtonPressMock}
-        originalButtonStyles={{ containerstyle: { backgroundColor: 'green' } }}
-      />
+        originalButtonStyles={{containerstyle: {backgroundColor: 'green'}}}
+      />,
     );
 
     const originalButton = getByText('Original Button');
@@ -21,12 +21,12 @@ describe('ButtonGroup component', () => {
   it('calls onOriginalButtonPress when original button is clicked', () => {
     const onOriginalButtonPressMock = jest.fn();
 
-    const { getByText } = render(
+    const {getByText} = render(
       <ButtonGroup
         originalbuttontitle="Original Button"
         onOriginalButtonPress={onOriginalButtonPressMock}
-        originalButtonStyles={{ containerstyle: { backgroundColor: 'green' } }}
-      />
+        originalButtonStyles={{containerstyle: {backgroundColor: 'green'}}}
+      />,
     );
 
     const originalButton = getByText('Original Button');
@@ -37,15 +37,15 @@ describe('ButtonGroup component', () => {
   it('renders correctly with additional button', () => {
     const onAdditionalButtonPressMock = jest.fn();
 
-    const { getByText } = render(
+    const {getByText} = render(
       <ButtonGroup
         originalbuttontitle="Original Button"
         additionalbuttontitle="Additional Button"
         onOriginalButtonPress={() => {}}
         onAdditionalButtonPress={onAdditionalButtonPressMock}
-        originalButtonStyles={{ containerstyle: { backgroundColor: 'green' } }}
-        additionalButtonStyles={{ containerstyle: { backgroundColor: 'blue' } }}
-      />
+        originalButtonStyles={{containerstyle: {backgroundColor: 'green'}}}
+        additionalButtonStyles={{containerstyle: {backgroundColor: 'blue'}}}
+      />,
     );
 
     const additionalButton = getByText('Additional Button');
@@ -55,15 +55,15 @@ describe('ButtonGroup component', () => {
   it('calls onAdditionalButtonPress when additional button is clicked', () => {
     const onAdditionalButtonPressMock = jest.fn();
 
-    const { getByText } = render(
+    const {getByText} = render(
       <ButtonGroup
         originalbuttontitle="Original Button"
         additionalbuttontitle="Additional Button"
         onOriginalButtonPress={() => {}}
         onAdditionalButtonPress={onAdditionalButtonPressMock}
-        originalButtonStyles={{ containerstyle: { backgroundColor: 'green' } }}
-        additionalButtonStyles={{ containerstyle: { backgroundColor: 'blue' } }}
-      />
+        originalButtonStyles={{containerstyle: {backgroundColor: 'green'}}}
+        additionalButtonStyles={{containerstyle: {backgroundColor: 'blue'}}}
+      />,
     );
 
     const additionalButton = getByText('Additional Button');

@@ -1,8 +1,6 @@
 import {StyleSheet} from 'react-native';
 import Colors from '../../constants/colors';
 
-
-
 export const styles = StyleSheet.create({
   picker: {width: '100%', height: 215, backgroundColor: Colors.WHITE},
   container: {
@@ -37,5 +35,3 @@ export const styles = StyleSheet.create({
   },
   datePicker: {},
 });
-
-

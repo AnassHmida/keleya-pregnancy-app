@@ -9,8 +9,11 @@ import {StackNavigationProp} from '@react-navigation/stack';
 import {isEmailValid} from '../../constants/utils';
 import {AppStackParamList} from '../../Types/Types';
 import {KeleyaContext} from '../../context/KeleyaContext';
-import { ButtonInvalidStyles, ButtonValidStyles } from '../../components/Button/style';
-import { checkBoxStyle } from '../../components/CheckBox/style';
+import {
+  ButtonInvalidStyles,
+  ButtonValidStyles,
+} from '../../components/Button/style';
+import {checkBoxStyle} from '../../components/CheckBox/style';
 import strings from '../../constants/strings';
 
 const SignUpScreen = () => {
@@ -20,8 +23,19 @@ const SignUpScreen = () => {
   const [agreedToTerms, setagreedToTerms] = useState(false);
   const navigation = useNavigation<StackNavigationProp<AppStackParamList>>();
   const keleyaContext = useContext(KeleyaContext);
-  const { LoginButton ,And, AddYourDetailsTitle  ,IAcceptThe, KeleyasAdvice,TermsAndConditions, PrivacyPolicy,ExampleEmailPlaceholder , IveReadThe, EnterPasswordPlaceholder} = strings
-  
+  const {
+    LoginButton,
+    And,
+    AddYourDetailsTitle,
+    IAcceptThe,
+    KeleyasAdvice,
+    TermsAndConditions,
+    PrivacyPolicy,
+    ExampleEmailPlaceholder,
+    IveReadThe,
+    EnterPasswordPlaceholder,
+  } = strings;
+
   if (!keleyaContext) {
     return null;
   }

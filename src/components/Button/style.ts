@@ -84,6 +84,3 @@ export const ButtonInvalidStyles = StyleSheet.create({
     color: Colors.WHITE,
   },
 });
-
-
-
