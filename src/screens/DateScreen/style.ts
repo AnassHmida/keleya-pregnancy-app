@@ -42,10 +42,10 @@ export const DateButtonsStyles = StyleSheet.create({
     paddingVertical: 10,
     borderRadius: 10,
     alignItems: 'center',
-    backgroundColor: 'gray',
+    backgroundColor: Colors.LIGHT_GRAY,
   },
   textstyle: {
     fontSize: 20,
-    color: 'blue',
+    color: Colors.DARK_BLUE,
   },
 });
