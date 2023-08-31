@@ -36,7 +36,7 @@ const WorkoutScreen = () => {
 
   const handleSuccess = async () => {
     setAuthentication(true);
-    console.log(selectedWorkout)
+    console.log(selectedWorkout);
     setWorkoutOption(selectedWorkout);
     navigation.navigate(Success);
   };

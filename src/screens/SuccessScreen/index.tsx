@@ -10,7 +10,6 @@ import {
   LoginButtonsStyles,
   NobackgroundButtonStyles,
 } from '../../components/Button/style';
-
 const SuccessScreen = () => {
   const {t} = useTranslation();
   const keleyaContext = useContext(KeleyaContext);

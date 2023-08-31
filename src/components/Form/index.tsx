@@ -54,7 +54,7 @@ const Form = ({
   const navigation = useNavigation();
 
   const handleBackPress = () => {
-    console.log('vkac pressss')
+    console.log('vkac pressss');
     navigation.goBack();
   };
 

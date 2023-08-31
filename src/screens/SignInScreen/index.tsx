@@ -21,7 +21,6 @@ const SignInScreen = () => {
   const navigation = useNavigation<StackNavigationProp<AppStackParamList>>();
   const isFormValid = isEmailValid(email) && password.length > 0;
   const keleyaContext = useContext(KeleyaContext);
-
   if (!keleyaContext) {
     return null;
   }
