@@ -6,7 +6,7 @@ import {DateButtonsStyles} from './style';
 import Form from '../../components/Form';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
-import {Workout} from '../../constants/navigation';
+import {Date as Dt, Workout} from '../../constants/navigation';
 import {KeleyaContext} from '../../context/KeleyaContext';
 import {formattedDate} from '../../constants/utils';
 import {AppStackParamList} from '../../Types/Types';
@@ -36,6 +36,7 @@ const DateScreen = () => {
 
   return (
     <Form
+      testId={Dt}
       OriginalButtonText={ContinueButton}
       onOriginalButtonPress={handleSucces}
       OriginalButtonStyles={ButtonValidStyles}

@@ -3,7 +3,7 @@ import InputField from '../../components/InputField';
 import Checkbox from '../../components/CheckBox';
 import images from '../../constants/images';
 import Form from '../../components/Form';
-import {Name} from '../../constants/navigation';
+import {Name, SignUp} from '../../constants/navigation';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {isEmailValid} from '../../constants/utils';
@@ -15,6 +15,7 @@ import {
 } from '../../components/Button/style';
 import {checkBoxStyle} from '../../components/CheckBox/style';
 import strings from '../../constants/strings';
+import { View } from 'react-native';
 
 const SignUpScreen = () => {
   const [email, setMail] = useState('');
@@ -56,7 +57,9 @@ const SignUpScreen = () => {
   };
 
   return (
+
     <Form
+      testId={SignUp}
       OriginalButtonText={LoginButton}
       onOriginalButtonPress={handleSignUp}
       OriginalButtonStyles={
@@ -101,6 +104,7 @@ const SignUpScreen = () => {
         </>
       )}
     />
+
   );
 };
 

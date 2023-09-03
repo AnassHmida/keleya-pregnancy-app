@@ -4,7 +4,7 @@ import images from '../../constants/images';
 import Form from '../../components/Form';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
-import {Success} from '../../constants/navigation';
+import {Success, Workout} from '../../constants/navigation';
 import {styles} from './style';
 import {AppStackParamList} from '../../Types/Types';
 import {KeleyaContext} from '../../context/KeleyaContext';
@@ -35,6 +35,7 @@ const WorkoutScreen = () => {
 
   return (
     <Form
+      testId={Workout}
       OriginalButtonText={ContinueButton}
       onOriginalButtonPress={handleSucces}
       OriginalButtonStyles={ButtonValidStyles}

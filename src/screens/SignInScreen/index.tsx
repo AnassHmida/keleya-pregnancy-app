@@ -4,7 +4,7 @@ import images from '../../constants/images';
 import Form from '../../components/Form';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
-import {Success} from '../../constants/navigation';
+import {SignIn, Success} from '../../constants/navigation';
 import {isEmailValid} from '../../constants/utils';
 import {AppStackParamList} from '../../Types/Types';
 import {KeleyaContext} from '../../context/KeleyaContext';
@@ -14,6 +14,7 @@ import {
   NobackgroundButtonStyles,
 } from '../../components/Button/style';
 import strings from '../../constants/strings';
+import { View } from 'react-native';
 
 const SignInScreen = () => {
   const [email, setMail] = useState('');
@@ -44,8 +45,9 @@ const SignInScreen = () => {
   };
 
   return (
-    <>
+    
       <Form
+      testId={SignIn}
         AdditionalButtonStyles={NobackgroundButtonStyles}
         AdditionalButtonText={HaveYouForgottenYourPassword}
         onAdditionalButtonPress={() => {}}
@@ -73,7 +75,7 @@ const SignInScreen = () => {
           </>
         )}
       />
-    </>
+
   );
 };
 

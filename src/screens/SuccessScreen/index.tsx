@@ -10,7 +10,8 @@ import {
   NobackgroundButtonStyles,
 } from '../../components/Button/style';
 import strings from '../../constants/strings';
-const {GetNotificationsTitle, SkipButton, AllowNotificationsButton} = strings;
+import { Success } from '../../constants/navigation';
+const { GetNotificationsTitle , SkipButton , AllowNotificationsButton } = strings
 const SuccessScreen = () => {
   const keleyaContext = useContext(KeleyaContext);
 
@@ -27,6 +28,7 @@ const SuccessScreen = () => {
       style={styles.backgroundImage}
       resizeMode={'cover'}>
       <Form
+        testId={Success}
         icon={'bell'}
         headertitle={GetNotificationsTitle}
         AdditionalButtonStyles={NobackgroundButtonStyles}

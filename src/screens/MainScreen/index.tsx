@@ -2,7 +2,7 @@ import React from 'react';
 import {ImageBackground} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
-import {SignIn, SignUp} from '../../constants/navigation';
+import {Main, SignIn, SignUp} from '../../constants/navigation';
 import images from '../../constants/images';
 import {styles} from './style';
 import {AppStackParamList} from '../../Types/Types';
@@ -22,6 +22,7 @@ const MainScreen = () => {
       style={styles.backgroundImage}
       resizeMode={'cover'}>
       <Form
+        testId={Main}
         logo={images.logo}
         headertitle={ForAFitAndRelaxedPregnancy}
         AdditionalButtonStyles={LoginButtonsStyles}

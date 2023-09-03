@@ -14,6 +14,7 @@ import ButtonGroup from '../ButtonGroup';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 type FormProps = {
+  testId?: string;
   title?: string;
   icon?: string;
   headertitle?: string;
@@ -37,6 +38,7 @@ type FormProps = {
 };
 
 const Form = ({
+  testId,
   title,
   headerimage,
   headertitle,
@@ -60,6 +62,7 @@ const Form = ({
 
   return (
     <View
+    testID={testId}
       style={
         render
           ? styles.container

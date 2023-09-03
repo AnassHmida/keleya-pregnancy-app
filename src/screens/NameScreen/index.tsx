@@ -5,7 +5,7 @@ import {InputStyle} from './style';
 import Form from '../../components/Form';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
-import {Date} from '../../constants/navigation';
+import {Date, Name} from '../../constants/navigation';
 import {KeleyaContext} from '../../context/KeleyaContext';
 import {AppStackParamList} from '../../Types/Types';
 import {validName} from '../../constants/utils';
@@ -29,6 +29,7 @@ const NameScreen = () => {
   return (
     <>
       <Form
+        testId={Name}
         OriginalButtonText={ContinueButton}
         onOriginalButtonPress={() => {
           isFormValid && navigation.navigate(Date);
